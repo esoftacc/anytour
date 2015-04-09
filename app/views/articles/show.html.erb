@@ -1,0 +1,69 @@
+<%
+metamagic title: @article.meta_tag.title, description: @article.meta_tag.description ,keywords: @article.meta_tag.keywords
+%>
+<section id="coca-breadcrumb">
+  <div id="coca-breadcrumb-wrap" class="container">
+    <div id="breadcrumb" class="row">
+
+      <div style="width:70%;">
+        <h1 class="page-title"><%= @article.title %></h1>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section id="blog-content" class="white">
+  <div id="main" class="container">
+    <div id="main-wrap" class="row">
+      <div id="primary" class="col-lg-9 col-md-9 col-sm-9">
+        <div role="main">
+          <article class="post type-post category-blog single" id="article-<%= @article.id %>">
+            <div class="featured-image">
+            <% if can? :update, @article %>
+              <div id="page_admin_tools_block" class="article_tools">
+                <%= link_to edit_article_path(@article), :class => 'page_admin_tool_button' do %>
+                  <i class="fa fa-pencil"></i>
+                <% end %>
+              </div>
+            <% end %>
+              <a href="blog-single.html"><%= image_tag(@article.image.url(:big)) %></a>
+            </div><!--/.featured-image-->
+            <div class="coca-content-blog-content">
+              <div class="left-entry-header blog-sing-content">
+                <span class="time-wrap"><time datetime="<%= @article.created_at %>" class="entry-date"><span class="day"><%= @article.created_at.day %></span> <%=l @article.created_at, format: :month_and_year %></time></span>
+              </div>
+              <div class="right-blog-conten-wrap">
+        <header class="entry-header">
+          <div class="right-entry-header">
+                    <h2 class="entry-title">
+                      <%= @article.header %>
+                    </h2>
+                  </div>
+                </header>
+                <!--<div class="entry-meta">
+                  <span class="by-author">By <a href="#" rel="bookmark">Leo Babauta </a></span>
+                  <span class="post-category">
+                      <a href="#" rel="bookmark" title="">Code</a>, <a href="#" rel="bookmark" title="">HTML5</a>
+                  </span>
+                  <span class="post-comment"><a href="#" rel="bookmark">18</a></span>
+                  <span class="post-date"> 5 Jan 2014</span>
+                </div>-->
+                <div class="entry-content">
+                  <%= raw @article.description %>
+                  <!--<ul class="content-tags">
+                    <li><a href="#">Startups</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Millions of dollars</a></li>
+                    <li><a href="#">Paul Graham</a></li>
+                  </ul>-->
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    <%= render 'secondary_block' %> 
+    </div>
+  </div>
+</section>

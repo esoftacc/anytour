@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Mobile Specific
+    ========================================================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+
+    <!-- Title Tag
+    ========================================================================= -->
+    <title>PARAMOUNT Template</title>
+
+    <!--Animations -->
+    <!--[if lt IE 7 ]><html class="no-js ie ie6" lang="en"><![endif]-->
+    <!--[if IE 7 ]><html class="no-js ie ie7" lang="en"><![endif]-->
+    <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"><![endif]-->
+    <!--[if IE 9 ]><html class="no-js ie ie9" lang="en"><![endif]-->
+    <!-- Site Favicon
+    ========================================================================= -->
+    <link rel="shortcut icon" href="#" title="Favicon" />
+
+    <!-- WOWSlider
+    ========================================================================= -->
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+
+    <!-- WOWSlider end
+    ========================================================================= -->
+
+    <!-- FancyBox
+    ========================================================================= -->
+    <script>
+      !window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+    </script>
+    <script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+    <link rel="stylesheet" href="style.css" />
+    
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $("a[rel=group_1]").fancybox({
+          'transitionIn'    : 'none',
+          'transitionOut'   : 'none',
+          'titlePosition'   : 'over',
+          'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+          }
+        });
+
+         $("a[rel=group_2]").fancybox({
+          'transitionIn'    : 'none',
+          'transitionOut'   : 'none',
+          'titlePosition'   : 'over',
+          'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+          }
+        });
+
+          $("a[rel=group_3]").fancybox({
+          'transitionIn'    : 'none',
+          'transitionOut'   : 'none',
+          'titlePosition'   : 'over',
+          'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+          }
+        });
+
+           $("a[rel=group_4]").fancybox({
+          'transitionIn'    : 'none',
+          'transitionOut'   : 'none',
+          'titlePosition'   : 'over',
+          'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
+            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+          }
+        });
+
+
+      });
+    </script>
+
+    <!-- FancyBox end
+    ========================================================================= -->
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/layerslider.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.css">
+    <!-- pe icon 7 filled-->
+    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="assets/css/pe-icon-7-filled.css">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+     <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- anamations effect-->
+    <link rel="stylesheet" href="assets/css/animations.min.css">
+    <!-- Portfolio style -->
+    <link rel="stylesheet" href="assets/css/style-portfolio.css">
+    <!-- Browser Specical File-->
+    <!--[if IE 8]>
+    <link href="assets/css/ie8.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+</head>
+<body>
+    <style>
+    #day-other-info-wrap {
+      display: block;
+      position: relative;
+      width: 100%;
+      min-height: 50px;
+    }
+    #day-other-info-block {
+      text-align: left;
+      margin: 10px 0px 30px 50px;
+      float: left;
+      display: inline-block;
+      background-color: rgba(0,0,0,0.5);
+      padding: 0px 20px 0px 6px;
+      border-radius: 30px 2px 2px 30px;
+    }
+    #day-other-info-icon {
+      line-height: 40px;
+      font-size: 34px;
+      color: rgba(0,0,0,1);
+      display: inline-block;    }
+    #day-other-info-block p {
+      display: inline-block;
+      text-align: left;
+      margin: -18px 0px 0px 10px;
+      height: 100%;
+      font-size: 17px;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+      color: rgba(255, 255, 255, 1);
+      vertical-align: middle;
+    }
+    .pe-7s-help1 {
+      position:absolute; 
+      color: rgb(95, 195, 0); 
+      font-size: 120px; 
+      left: 10px; 
+      padding-left: 10%; 
+      text-shadow: -2px -2px 1px #000; 
+      margin-top: -15px
+    }
+    #order-button {
+      text-align: center; 
+      width: 80%; 
+      margin: 30px 10% 0px 10%;
+    }
+    .order-button-icon {
+      float: left; 
+      position: absolute; 
+      font-size: 40px; 
+      left: 5%; 
+      top: 8%; 
+      color: #FAC700;
+    }
+    #tour-spec-price {
+      width: 100%;
+        margin: 0px 0px 0px 20px;
+        font-size: 25px;
+        vertical-align: super;
+        color: #E9280C;
+        text-align: center;
+        text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.48);
+    }
+    #tour-spec-price-ico {
+      width: 45px;
+        height: 45px;
+        font-size: 32px;
+        color: #4F8400;
+        text-align: center;
+        line-height: 45px;
+        border: 1px dashed #497704;
+        border-radius: 30px;
+        background: #F4F5F5;
+        display: inline-block;
+    }
+    .price-ribbon {
+      vertical-align: middle;
+        margin-bottom: 15px;
+        margin-left: 20%;
+        margin-top: 30px;
+        width: 55%;
+        border-radius: 25px 20px 20px 25px;
+        padding:3px;
+        display:inline-block;
+        background: #B8B7B7; /* Old browsers */
+    }
+    #tour-spec-ico {
+      width: 45px;
+        height: 45px;
+        font-size: 32px;
+        color: #e9280c;
+        text-align: center;
+        line-height: 45px;
+        border: 1px dashed #A5A8A8;
+        border-radius: 30px;
+        background: #F4F5F5;
+        display: inline-block;
+    }
+    #tour-spec {
+      width: 100%;
+        height: 100%;
+        margin: 0px 0px 0px 20px;
+        font-size: 20px;
+        vertical-align: super;
+    }
+    .ribbon {
+      vertical-align: middle;
+        margin-bottom: 15px;
+    }
+    .coca-content-tag {
+      padding-right:0px;!important
+    }
+    .prog-wrap {
+      padding-left: 20px;
+    } 
+    .widget_instagram {
+      background:#F4F5F5; padding: 20px 15px 20px 15px
+    }
+    #wowslider-container1 {
+      float: left; 
+      margin: 0px 30px 0px 120px;
+    }
+    .ws_script{
+      position:absolute;left:-99%
+    }
+    #slide-show {
+      padding: 10px 0px 30px 0px
+    }
+    .coca_button_white {
+      background-color: #2F2F2F;
+    }
+    #start-trial {
+      background-image: url(bg.png);
+      box-shadow: inset 0px 0px 10px rgba(0,0,0,1);
+      background-color: #474747;
+    }
+    ul li { 
+    margin-bottom: 10px;
+    }
+   #vklucheno li {
+      list-style: none; /* Убираем исходные маркеры */
+      background: url(star-full.png) no-repeat 0 0px; /* Параметры фона */
+      padding-left: 45px;
+      height: 35px;
+      padding-top: 8px;
+      font-size: 17px;
+   }
+   #ne-vklucheno li {
+      list-style: none; /* Убираем исходные маркеры */
+      background: url(star-empty.png) no-repeat 0 0px; /* Параметры фона */
+      padding-left: 45px;
+      height: 35px;
+      padding-top: 8px;
+      font-size: 17px;   
+   }
+
+    .testimonal {
+      padding: 0px 0px 50px 0px; 
+      margin-top: -1px;
+      text-align: center;
+    }
+    .testimonial-content  {
+      display: inline-block;
+      padding: 10px 15px 10px 15px;
+      color: #121212;
+      text-shadow: 0px 1px 2px #626262;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-size: 26px;
+    }
+
+    .day-desc {
+      padding: 30px 10% 30px 10%;
+      /*background-image: url(subtle_white_feathers.png);*/
+      border: 1px solid #D4D8D8;
+      background-color: #F4F4F4;
+    }
+    .day-desc p {
+      text-align: left;
+      color: #6C7377;
+    }
+    #day-img-group  img {
+      min-width: 100px;
+      height: 170px;
+      border: 1px solid #BBB;
+      padding: 3px;
+      margin: 0px 5px 0px 0px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.37);
+    }
+    .day-imd-wrap {
+      padding: 30px 15px 30px 15px;
+    }
+  </style>
+
+  <div id="page" class="hfeed site">
+    <header id="header" class="site-header" role="banner">
+      <div id="coca-top-bar" class="top-bar-wrap">
+        <div class="container">
+          <div class="left-widget-wrap left">
+            <div class="phone left">
+              Call Us: (1)113 325 756
+            </div>
+            <div class="mail left">
+              <a href="mailto:info@example.com">Mail:info@example.com</a>
+            </div>
+          </div>
+          <div class="right-widget-wrap right">
+            <div class="top-social">
+              <ul id="social-top">
+                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="coca-top-nav-wrapper">
+        <div class="container">
+          <div class="row">
+            <div id="logo" class="col-lg-4 col-md-12 col-sm-12">
+              <div class="logo-outer">
+                <a class="logo" href="index.html" title="Home">
+                  <span>Paramount</span>
+                </a>
+                <h2 id="site-description">What the theme can be</h2>
+              </div>
+            </div>
+            <nav role="navigation">
+              <div id="top-nav" class="col-lg-8 col-md-12 col-sm-12">
+                <div class="top-nav-wrap right navbg">
+                  <a class="mobile-menu-closed" href="#" id="mobile-menu-trigger">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                  <ul class="sf-menu" id="menu">
+                    <li>
+                      <a href="index.html">
+                          <span>Home</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#"><span>Features</span></a>
+                    </li>
+                    <li class="dropdown">
+                      <a class="sf-with-ul" href="#">
+                          <span>Pages</span>
+                      </a>
+                      <ul>
+                        <li>
+                            <a href="about-us.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="ui-elements.html">Ui Elements</a>
+                        </li>
+                        <li>
+                            <a href="404.html">404 Page</a>
+                        </li>
+                        <li>
+                            <a href="#">Press</a>
+                        </li>
+                        <li>
+                            <a href="#">Jobs & carreers</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#">Policy</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="portfolio.html"><span>Portfolio</span></a>
+                    </li>
+                    <li>
+                      <a href="blog.html"><span>Blog</span></a>
+                    </li>
+                    <li>
+                      <a href="contact.html"><span>Contact</span></a>
+                    </li>
+                    <li class="mega-section">
+                      <a href=""><span>Mega Menu</span></a>
+                      <div class="sf-mega">
+                        <div class="sf-mega-section">
+                          <strong>Contact Form</strong>
+                          <div class="sf-mega-section-content">
+                            <div class="form-group">
+                              <input type="text" id="name" name="name" class="form-control" data-errmsg="Name is required." placeholder="Name" required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" id="email" name="email" class="form-control" data-errmsg="Email is required." placeholder="Email" required/>
+                            </div>
+                            <div class="form-group">
+                              <textarea id="message" name="message" class="form-control" data-errmsg="Message is required." placeholder="Text" rows="3" required></textarea>
+                              <input type="submit" value="Submit" class="btn btn-lg coca_button_red" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sf-mega-section">
+                           <strong>Images and Text</strong>
+                           <div class="sf-mega-section-content">
+                            <a href="#"><img alt="mege menu" src="http://placehold.it/268x168/c3c3c3"/></a>
+                            <a class="title-mega-section" href="#">Phasellus bibendum</a>
+                            <p>In non porttitor tortor. Donec vel egestas Morlem adipiscing mauris ultricies.</p>
+                           </div>
+                        </div>
+                        <div class="sf-mega-section">
+                          <strong><a href="">Link List</a></strong>
+                          <ul class="mega-submenu">
+                            <li>
+                              <a href="#">About Us</a>
+                            </li>
+                            <li>
+                              <a href="#">About Us</a>
+                            </li>
+                            <li>
+                              <a href="#">Happy team</a>
+                            </li>
+                            <li>
+                              <a href="#">Happy team</a>
+                            </li>
+                            <li>
+                              <a href="#">Our clients</a>
+                            </li>
+                            <li>
+                              <a href="#">Our clients</a>
+                            </li>
+                            <li>
+                              <a href="#">Press</a>
+                            </li>
+                            <li>
+                              <a href="#">Press</a>
+                            </li>
+                            <li>
+                              <a href="#">Jpbs & careers</a>
+                            </li>
+                            <li>
+                              <a href="#">Jpbs & careers</a>
+                            </li>
+                            <li>
+                              <a href="#">Contact</a>
+                            </li>
+                            <li>
+                              <a href="#">Contact</a>
+                            </li>
+                            <li>
+                              <a href="#">Policy</a>
+                            </li>
+                            <li>
+                              <a href="#">Policy</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                     </li>
+                    <li class="dropdown search-bt">
+                      <a id="drop-search" role="button" data-toggle="dropdown" href="#"> <span class="pe-7s-search"></span></a>
+                      <div class="coca-search">
+
+                         <aside id="search-2" class="search-form-wrap widget widget_search" style="display:none;">
+                          <form role="search" method="get" class="search-form" action="index.html">
+                            <label>
+                              <span class="screen-reader-text">Search for:</span>
+                              <input type="search" class="search-field" placeholder="Type keyword and hit Enter" value="" name="s" title="Search for:" />
+                            </label>
+                            <input type="submit" class="search-submit" value="Search" />
+                          </form>
+                        </aside>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav><!-- end top-nav -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+      <section id="coca-breadcrumb">
+        <div id="coca-breadcrumb-wrap" class="container">
+          <div id="breadcrumb" class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <h3 class="page-title">Майский тур "Пробуждение Байкала" 2015</h3>
+              <p class="page-intro">Погрузитесь в атмосферу весеннего пробуждения самого прекрасного озера!</p>
+            </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="breadcrumb-trail breadcrumbs">
+                  <span>You are here:</span> <a href="#">Home</a> / About Us
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+
+
+  <div class="content-wrapper">
+    <div id="content" class="site-content">
+
+
+
+      <section id="slide-show">
+
+
+        <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+  <div id="wowslider-container1">
+  <div class="ws_images"><ul>
+    <li><a href="http://wowslider.com"><img src="data1/images/0012.jpg" alt="jquery image gallery" title="0012" id="wows1_0"/></a></li>
+    <li><img src="data1/images/0060.jpg" alt="0060" title="0060" id="wows1_1"/></li>
+  </ul></div>
+  <div class="ws_bullets"><div>
+    <a href="#" title="0012"><span><img src="data1/tooltips/0012.jpg" alt="0012"/>1</span></a>
+    <a href="#" title="0060"><span><img src="data1/tooltips/0060.jpg" alt="0060"/>2</span></a>
+  </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">slider js</a> by WOWSlider.com v7.7</div>
+  <div class="ws_shadow"></div>
+  </div>  
+  <script type="text/javascript" src="engine1/wowslider.js"></script>
+  <script type="text/javascript" src="engine1/script.js"></script>
+  <!-- End WOWSlider.com BODY section -->
+
+
+
+            <div id="coca-progress" class="col-lg-5 col-md-5 col-sm-5 powerskill">
+              <div class="coca-heading">
+                <h3 class="coca-heading-tag"></h3>
+                <div class="heading-border">
+                  <div class="heading-border-inner-border">
+                  </div>
+                </div>
+              </div>
+              <div class="coca-content-tag">
+                <div class="prog-wrap">
+                  <div class="prog-wrap">
+                    <p> 
+                         Вам представляется великолепная возможность посетить озеро Байкал в мае!
+                          <br>
+                         Планируя свой отдых, мало кто знает, что именно в первых числах мая Байкал освобождается ото льда. Это потрясающее зрелище, наблюдать которое приезжают сотни фотохудожников - вдогонку «за уходящим льдом» Байкала. В это время на Байкале каждая льдинка живая. 
+                          <br>              
+                         Если вы на минуту закроете глаза и прислушаетесь, то услышите, как шуршит и потрескивает лед у края берега. Вся природа вокруг давно проснулась и готова к новому перерождению, и только «Старец Байкал» держит свой ледовый панцирь. Вдруг повезет именно вам – и Байкал вскроется на ваших глазах!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </section>
+
+
+
+      <section id="coca-skill" class="white">
+        <div id="coca-skill-wrap" class="container">
+          <div class="row">
+            <div id="word-leader" class="col-lg-7 col-md-7 col-sm-7">
+              <div class="coca-heading">
+                <h3 class="coca-heading-tag">Информация о месте назначения</h3>
+                  <div class="heading-border" style="margin-bottom: 20px;">
+                    <div class="heading-border-inner-border">
+                    </div>
+                  </div>
+              </div>          
+                <div class="coca-content-tag"> 
+                                                       <!-- Baidu Map -->
+                </div>
+            </div>
+                <div class="col-lg-4 col-md-4 col-sm-4"style="float: right;">
+                  <div id="instagram" class=" widget widget_instagram">
+                    <div class="coca-heading"> 
+                      <div class="heading-border" style="margin-bottom: 20px;">   
+                      </div>  
+                        <div class="coca-content-tag">  
+                          <div class="ribbon"> <span id="tour-spec-ico" class="pe-7f-sun"></span> <span id="tour-spec">Весна - Лето </span> </div>
+                          <div class="ribbon"> <span id="tour-spec-ico" class="pe-7f-users"></span> <span id="tour-spec">10-12 человек </span> </div>
+                          <div class="ribbon"> <span id="tour-spec-ico" class="pe-7f-clock"></span> <span id="tour-spec"> 10 дней - 11 ночей </span> </div>
+                          <div class="price-ribbon"> <span id="tour-spec-price-ico" class="icon-cny"></span> <span id="tour-spec-price"> 1800 </span> </div>
+                        </div>
+                      <a class="coca_button_red press " id="order-button" href="#"><span class="pe-7f-credit order-button-icon"></span>Оформить тур</a>
+                    </div> 
+                  </div>
+                </div>            
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <section id="start-trial">
+        <div id="start-trial-wrap" class="container">
+          <div class="row">
+            <span class="pe-7s-help1"></span>
+              <div class="col-lg-6 col-md-6 col-sm-6" style="width: 55%; margin-left: 200px">
+                <h3 class="section-whtitle left-effect">
+                  Возникли вопросы?
+                </h3>
+                <p class="right-effect">Если у Вас есть вопросы, свяжитесь с нашим специалистом и уточните все интересующие моменты!</p>
+              </div>
+                <div class="col-lg-2 col-md-2 col-sm-2" style="float: right;">
+                  <a href="#" class="coca_button_white coca_fade" style="float:right; margin-top: 20px;">ЗАДАТЬ ВОПРОС</a>
+                </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="coca-our-team" class="bortb white">
+        <div class="top-intro pe-7s-compass">
+          <h4 class="section-title">Программа поездки</h4>
+        </div>
+          <div id="coca-our-team-wrap" class="container">
+
+
+            <div class="row testimonal">
+                <p class="testimonial-content left-effect" > - День 1 - </p>
+              <div class="day-desc"> 
+                <p class="price-section-des">Добро пожаловать на Байкал! В а/п города Иркутска вас встретит представитель компании «Байкалика». Заселение в отель в 12-00 (учитывайте это при покупке авиабилетов). Размещение, отдых. После обеда - знакомство с гидом и отправление на экскурсию по городу.</p>   
+                <p class="price-section-des">Сегодня, в этот первомайский день, вы познакомитесь с историей города Иркутска, прогуляетесь по его старинным улочкам, посетите набережную реки Ангара, где 350 лет назад  был основан Иркутский острог. </p>
+              </div>
+                <div id="day-other-info-wrap"><div id="day-other-info-block"><span id="day-other-info-icon" class="pe-7s-info"></span> <p>Питание – завтрак , обед </p> </div></div>
+                  <div class="day-imd-wrap" >
+                    <a id="day-img-group" rel="group_1" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/000222.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/000222.jpg" /></a >
+                    <a id="day-img-group" rel="group_1" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/000333.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/000333.jpg" /></a >
+                    <a id="day-img-group" rel="group_1" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/000555.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/000555.jpg" /></a >
+                    <a id="day-img-group" rel="group_1" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/000122.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/000122.jpg" /></a >
+                    <a id="day-img-group" rel="group_1" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/000147.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/000147.jpg" /></a >
+                  </div>
+            </div>
+
+
+            <div class="row testimonal">          
+                <p class="testimonial-content left-effect">- День 2 -</p>
+              <div class="day-desc">
+                <p class="price-section-des" >Утром второго дня вы отправитесь в путешествие по Кругобайкальской железной дороге, которая протянулась на 80 км вдоль юго-западного побережья Байкала. КБДЖ – уникальный памятник архитектуры и инженерного искусства начала 20 века. 90-километровый участок дороги Порт Байкал - Слюдянка проложен на юго-западном побережье озера Байкал. Это самая дорогая и самая красивая железная дорога, которую строили с 1896 по 1900 год архитекторы и инженеры из России, Италии, Латвии, Польши и Албании. </p>  
+                <p class="price-section-des" >Кругобайкальская железная дорога – это место паломничества туристов, художников, учёных, спортсменов. Сюда приезжают со всех концов страны полюбоваться на Байкал из окна туристического поезда и на окружающие памятники природы. Это путешествие запомнится вам надолго!</p>  
+                <p class="price-section-des" >
+                Прибытие в пос. Листвянка в 19-00. Размещение в гостевом доме. </p>            
+              </div>     
+                <div id="day-other-info-wrap"><div id="day-other-info-block"><span id="day-other-info-icon" class="pe-7s-info"></span> <p>Питание – завтрак , обед </p> </div></div>
+                  <div class="day-imd-wrap" >
+                    <a id="day-img-group" rel="group_2" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/0007.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/0007.jpg" /></a >
+                    <a id="day-img-group" rel="group_2" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/0013.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/0013.jpg" /></a >
+                    <a id="day-img-group" rel="group_2" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/0019.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/0019.jpg" /></a >
+                    <a id="day-img-group" rel="group_2" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/0060.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/0060.jpg" /></a >
+                    <a id="day-img-group" rel="group_2" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/00133.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/00133.jpg" /></a >                    
+                  </div>   
+            </div>
+
+
+            <div class="row testimonal">
+                <p class="testimonial-content left-effect" > - День 3 - </p>
+              <div class="day-desc"> 
+                <p class="price-section-des">Этот день вы сможете провести по своему усмотрению. Мы рекомендуем вам посетить обзорную площадку, нерпинарий, картинную галерею, рыбный рынок, водную экскурсию на Хивусе. Для тех, кто хочет провести время активно, советуем поездку на квадроциклах, конную прогулку или дайвинг. </p>
+              </div>
+                <div id="day-other-info-wrap"><div id="day-other-info-block"><span id="day-other-info-icon" class="pe-7s-info"></span> <p>Питание  - обед </p> </div></div>
+                  <div class="day-imd-wrap" >
+                    <a id="day-img-group" rel="group_3" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/0012.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/0012.jpg" /></a >
+                    <a id="day-img-group" rel="group_3" href="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/big/000414.jpg"><img alt="example2" src="http://www.baikalika.ru/upload/images/Leto/maiskiy%20tur/smoll/000414.jpg" /></a >
+                  </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="coca-facts" class="bortb">  
+          <div class="top-intro pe-7s-check hidden visible animated flipInX" style="text-align: center; width: 100%; margin-bottom: 40px;">
+            <h4 class="section-title">Услуги включенные в оплачиваемый тур</h4>
+          </div>
+        <div id="coca-facts-wrap" class="container">
+          <div class="row">
+
+            <div id="vklucheno" class="col-lg-6 col-md-6 col-sm-6 right-effect hidden visible animated bounceInRight" >
+                <h3 class="about-us-title" style="width: 90%; text-align: center; color: #2D7B00;">Список услуг включенных в путевку</h3>
+              <ul>
+                <li>Эта хуйня включена в тур и бесплатна</li>
+                <li>Эта хуйня тоже включена в тур и почти бесплатна :)</li>
+                <li>Эта хуйня включена в тур и бесплатна</li>
+                <li>Эта хуйня тоже включена в тур и почти бесплатна :)</li>
+                <li>Эта хуйня включена в тур и бесплатна</li>
+                <li>Эта хуйня тоже включена в тур и почти бесплатна :)</li>
+              </ul>
+            </div>
+
+
+            <div id="ne-vklucheno" class="col-lg-6 col-md-6 col-sm-6 right-effect hidden visible animated bounceInRight" >
+                <h3 class="about-us-title" style="width: 90%; text-align: center; color: #AE0D0D;">Список услуг не включенных в путевку</h3>             
+              <ul>
+                <li>Эта хуйня не включена в тур друга</li>
+                <li>Эта хуйня тоже не включена в тур и нихуя не бесплатна :)</li>
+                <li>Эта хуйня не включена в тур друга</li>
+                <li>Эта хуйня тоже не включена в тур и нихуя не бесплатна :)</li>
+                <li>Эта хуйня не включена в тур друга</li>
+                <li>Эта хуйня тоже не включена в тур и нихуя не бесплатна :)</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="blog-content" class="white">
+        <div class="top-intro pe-7s-comment hidden visible animated flipInX" style="text-align: center; width: 100%; margin-bottom: 100px;">
+          <h4 class="section-title">Оставленные коментарии</h4>
+        </div>
+          <div id="main" class="container">
+            <div id="main-wrap" class="row">
+              <div id="primary" class="col-lg-9 col-md-9 col-sm-9" style="margin: 0px 0px 0px 12%">
+                <div role="main">
+
+                  <article class="post type-post category-blog" id="post-36">
+                    <div class="coca-content-blog-content">
+                      <div class="left-entry-header blog-sing-content">
+                        <span class="time-wrap"><time datetime="2014-07-28T06:47:13+00:00" class="entry-date"><span class="day">28</span> Янв 2014</time></span>
+                      </div>
+                      <div class="right-blog-conten-wrap">
+                        <header class="entry-header">
+                          <div class="right-entry-header">
+                            <h3 class="entry-title">
+                              <p style="font-size: 24px;"rel="bookmark" >Охуенный тур!</p>
+                            </h3>
+                          </div>
+                        </header>
+                        <div class="entry-meta">
+                          <span class="by-author">By <a href="#" rel="bookmark">Leo Babauta </a></span>
+                          <span class="post-date"> 28 Янв 2014</span>
+                        </div>
+                        <div class="entry-excerpt">
+                          Сгонял в тур и охуел от того как там заебато, когда ссался от счастья - прожег штаны!
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="post type-post category-blog" id="post-37">                   
+                    <div class="coca-content-blog-content">
+                      <div class="left-entry-header blog-sing-content">
+                        <span class="time-wrap"><time datetime="2014-07-28T06:47:13+00:00" class="entry-date"><span class="day">5</span> Дек 2014</time></span>
+                      </div>
+                      <div class="right-blog-conten-wrap">
+                        <header class="entry-header">
+                          <div class="right-entry-header">
+                            <h3 class="entry-title">
+                              <p style="font-size: 24px;"rel="bookmark" >Cannes 2014 line-up: 'A mouth-watering selection'</p>
+                            </h3>
+                          </div>
+                        </header>
+                        <div class="entry-meta">
+                          <span class="by-author">By <a href="#" rel="bookmark">Leo Babauta </a></span>
+                          <span class="post-date"> 5 Дек 2014</span>
+                        </div>
+                        <div class="entry-excerpt">
+                          If you are worried about something coming up, or caught up in something that already happened, breathe. It will bring you back to the present. If you are discouraged and have forgotten your purpose in life, breathe. It will remind you about how precious life is, and that each breath in this life is a gift you need to appreciate.
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="post type-post category-blog" id="post-38">
+                    <div class="coca-content-blog-content">
+                      <div class="left-entry-header blog-sing-content">
+                        <span class="time-wrap"><time datetime="2014-07-28T06:47:13+00:00" class="entry-date"><span class="day">14</span> Янв 2013</time></span>
+                      </div>
+                      <div class="right-blog-conten-wrap">
+                        <header class="entry-header">
+                          <div class="right-entry-header">
+                            <h3 class="entry-title">
+                              <p style="font-size: 24px;"rel="bookmark" >How we made Spitting Image</p>
+                            </h3>
+                          </div>
+                        </header>
+                        <div class="entry-meta">
+                          <span class="by-author">By <a href="#" rel="bookmark">Leo Babauta </a></span>
+                          <span class="post-date"> 14 Янв 2013</span>
+                        </div>
+                        <div class="entry-excerpt">
+                          If you are worried about something coming up, or caught up in something that already happened, breathe. It will bring you back to the present. If you are discouraged and have forgotten your purpose in life, breathe. It will remind you about how precious life is, and that each breath in this life is a gift you need to appreciate.
+                         <br />
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+
+    </div>
+  </div> <!-- End content-wrapper -->
+
+
+
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+      <div class="footer-wrapper container">
+        <div class="row">
+          <div class="sidebar footer-sidebar clearfix">
+            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget first footer-widget">
+              <div id="meta" class="widget widget_meta">
+                <h3 class="widget-title">Paramount</h3>
+                <p>The alarming thing is, the mistakes that produce these regrets are all errors of omission. You forget your dreams, ignore your family, suppress your feelings, neglect your friends, and forget to be happy. </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget footer-widget">
+              <div id="tweet" class="widget widget_tweet">
+                <h3 class="widget-title">Twitter</h3>
+                <p>A showcase of traditionally hard CSS problems, easily solved using flexbox.</p>
+                <a href="#">http://t.co/40aOhYRtjC </a>
+                <p>via <a href="#">@philwalton</a></p>
+                <p><span><a href="#">2 months ago</a></span></p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget footer-widget">
+              <div id="get_touch" class="widget widget_get_touch">
+                <h3 class="widget-title">Get In Touch</h3>
+                <p><span>Address:</span> 1600 Pennsylvania Ave NW, Washington, DC 20500</p>
+                <p><span>Phone:</span> (202) 456-1111</p>
+                <p><span>Email:</span> <a href="mailto:obama@whitehouse.com">obama@whitehouse.com</a></p>
+                <ul class="footer-tweet">
+                  <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget last footer-widget">
+              <div id="newsletter-wrap" class="widget widget_get_touch">
+                <h3 class="widget-title">Newsletter</h3>
+                <p>Subscribe to our newsletter! Get tips, product updates and special offers.</p>
+                <form novalidate="" class="" name="cc-embedded-subscribe-form" method="post" action="index.html" id="subscribe_form">
+                <input type="text" required placeholder="mail@example.com" id="mce-EMAIL" class="subs_input" name="EMAIL" value="">
+                <input type="submit" class="subs_submit" value="Join" name="subscribe">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div> <!-- End #page -->
+    <!-- JavaScript -->
+
+    <script src="assets/js/jquery.modernizr.js"></script>
+    <script src="assets/js/ddsmoothmenu.js"></script>
+    <script src="assets/js/jquery.isotope.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Included LayerSlider -->
+    <script src="assets/js/jquery-easing-1.3.js"></script>
+    <script src="assets/js/greensock.js"></script>
+    <script src="assets/js/layerslider.kreaturamedia.jquery.js"></script>
+    <script src="assets/js/layerslider-animate.js"></script>
+    <script type='text/javascript'>
+    /* <![CDATA[ */
+    var FS = {"animation":"slide","pauseOnHover":"true","controlNav":"true","directionNav":"false","animationDuration":"500","slideshowSpeed":"5000","pauseOnAction":"false"};
+    /* ]]> */
+    </script>
+    <!-- Portfolio -->
+    <script type="text/javascript" src="assets/js/jquery.flexverticalcenter.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.stellar.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+
+    <!-- Flexslider -->
+    <script src="assets/js/jquery.flexslider.js"></script>
+
+    <script src="assets/js/jquery.countTo.js"></script>
+    <!-- aminations-->
+    <script src="assets/js/viewportchecker.js"></script>
+    <script src="assets/js/animations.min.js"></script>
+    <script src="assets/js/appear.min.js"></script>
+    <!-- countTo -->
+    <script src="assets/js/jquery.countTo.js"></script>
+    <!-- menu -->
+    <script src="assets/js/hoverIntent.js"></script>
+    <script src="assets/js/superfish.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    <script src="assets/js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<%= form_for(@blog) do |f| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+      <ul>
+      <% @blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <section class="white">
+    <div class="panel panel-default" style="margin: 0px 5% 0px 5%">
+      <div class="panel-body admin_tools_top">
+        <i class="fa fa-cogs menu_item_icon"></i>
+        <%= link_to '', blogs_path, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
+        <%= link_to_unless_current( '', { action: "new" }, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
+        <%= f.submit 'сохранить', :class => "btn btn-success fa fa-plus fa-2 right", style: 'color: black; font-size: 12px; text-transform: uppercase; padding: 10px; margin-left: 15px;' %>
+      </div>
+    </div>
+  </section>
+  <ul class="nav nav-tabs admin-tabs">
+    <li class="active"><a href="#default-info" data-toggle="tab">Основная информация</a></li>
+    <li><a href="#seo-options" data-toggle="tab">Опции SEO и меток</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="default-info">
+      <div id="admin-fields-block" style="min-height: 400px;">
+        <fieldset style=" width: 100%; display: inline-block; vertical-align:top;">
+          <div class="field">
+            <%= f.label :menu_icon, 'Иконка:' %><br>
+            <%= f.text_field :menu_icon %>
+            <br>
+            <br>
+            <%= f.label :title, 'Имя категории на китайском:' %><br>
+            <%= f.text_field :title, style: 'width: 45%;' %>
+          </div>
+          <br>
+          <div class="field">
+            <%= f.label :rus_title, 'Имя категории на русском:' %><br>
+            <%= f.text_field :rus_title, style: 'width: 45%;' %>
+          </div>
+          <br>
+            <%= f.check_box :published %>
+            <%= f.label :published, 'Опубликовать?' %>
+          <br>
+        </fieldset>
+      </div>
+    </div> 
+
+    <%= f.fields_for :meta_tag do |meta_tag| %>
+    <div class="tab-pane" id="seo-options">
+      <div id="admin-fields-block" style="min-height: 400px;">
+        <fieldset>
+          <div class="field">
+            <%= meta_tag.label :title, 'Титл страницы:' %><br>
+            <%= meta_tag.text_field :title, style: 'width:100%;' %>
+          </div>
+          <br>
+          <div class="field">
+            <%= meta_tag.label :description, 'Описание страницы:' %><br>
+            <%= meta_tag.text_field :description,  style: 'width:100%;'%>
+          </div>
+          <br>
+          <div class="field">
+            <%= meta_tag.label :keywords, 'Ключевые слова:' %><br>
+            <%= meta_tag.text_field :keywords,  style: 'width:100%;' %>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <section class="first">
+  </section>
+<% end %>
+

@@ -1,0 +1,22 @@
+<%
+ if @page.index == true 
+  metamagic title: 'Редактирование главной станицы'
+ else 
+  metamagic title: 'Изменение служебной страницы - '+@page.title
+ end 
+%>
+<section id="coca-breadcrumb">
+  <div id="coca-breadcrumb-wrap" class="container">
+    <div id="breadcrumb" class="row">
+      <% if @page.index == true %>
+        <h1 class="page-title">Редактирование главной станицы</h1>
+      <% else %>
+        <h1 class="page-title">Изменение служебной страницы - <%= @page.title %></h1>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'form' %>
+

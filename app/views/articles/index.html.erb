@@ -1,0 +1,52 @@
+<%
+metamagic title: 'Управление статьями в блоге'
+%>
+<section id="coca-breadcrumb">
+  <div id="coca-breadcrumb-wrap" class="container">
+    <div id="breadcrumb" class="row">
+        <h1 class="page-title">Управление статьями в блоге</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="white">
+
+<p id="notice"><%= notice %></p>
+
+<div id="admin_page_table_wrap_5">
+  <div class="panel panel-default">
+    <div class="panel-body admin_tools_top">
+      <i class="fa fa-cogs menu_item_icon"></i>
+      <%= link_to '', new_article_path, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px;' %>
+    </div>
+  </div>
+<table class="bordered">
+  <thead>
+    <tr>
+      <th>Заголовок</th>
+      <th>Категория</th>
+      <th>Публичность</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.rus_title, article %></td>
+        <td><%= Blog.find(article.blog_id).rus_title %></td>
+        <td width="100" class="center">
+          <% if article.published? %>
+            <i class="fa fa-check" style="color: #009B18; font-size: 19px;"></i>
+          <% else %>
+            <i class="fa fa-times" style="color: #9B1B00; font-size: 19px;"></i>
+          <% end%>
+        </td>
+        <td width="100" class="center"><%= link_to '', edit_article_path(article), class: 'btn btn-primary fa fa-pencil fa-2 center admin_pages_buttons' %></td>
+        <td width="100" class="center"><%= link_to '', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger fa fa-trash-o admin_pages_buttons' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</section>

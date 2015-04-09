@@ -1,0 +1,13 @@
+<%
+metamagic title: 'Изменение статьи - '+@article.title
+%>
+<section id="coca-breadcrumb">
+  <div id="coca-breadcrumb-wrap" class="container">
+    <div id="breadcrumb" class="row">
+        <h1 class="page-title">Изменение статьи - <%= @article.title %></h1>
+      </div>
+    </div>
+  </div>
+  
+<%= render 'form' %>
+

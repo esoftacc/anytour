@@ -1,0 +1,70 @@
+<% if @page && @page.index == true %>
+<%
+metamagic title: @page.meta_tag.title, description: @page.meta_tag.description ,keywords: @page.meta_tag.keywords
+%>
+<% end %>
+
+
+<% if @page && @page.index == true %>
+<div class="bs-example" data-example-id="simple-carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <% @page.slides.each do |slide| %>
+        <% if slide.first == true %> 
+        <li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+        <% else %>
+        <li class="" data-target="#carousel-example-generic" data-slide-to="<%= +1 %>"></li>
+        <% end %>
+        <% end %>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+          <% @page.slides.each do |slide| %>
+        <% if slide.first == true %> 
+        <div class="item active">
+          <a href="<%= slide.url %>">
+          <%= image_tag slide.slide_image.url(:slide), :'data-holder-rendered' =>"true", title: slide.title, alt: slide.title %>
+          <div class="carousel-caption">
+            <h4><%= slide.label %></h4>
+            <p><%= slide.description %></p>
+          </div>
+          </a>
+        </div>
+        <% else %>
+        <div class="item">
+          <a href="<%= slide.url %>">
+          <%= image_tag slide.slide_image.url(:slide), :'data-holder-rendered' =>"true", title: slide.title, alt: slide.title, style: 'width:100%' %>
+          <div class="carousel-caption">
+            <h4><%= slide.label %></h4>
+            <p><%= slide.description %></p>
+          </div>
+          </a>
+        </div>
+        <% end %>
+          <% end %>
+
+
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+        <span class="sr-only">上一张</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+        <span class="sr-only">下一张</span>
+      </a>
+    </div>
+  </div>
+      
+<section id="index_page" class="white" >
+<div class="top-intro">
+<i class="fa fa-globe"></i>
+  <h4 class="section-title"><%= @page.title %></h4>
+  <p class="section-intro"><%= @page.body %></p>
+<p id="notice"><%= notice %></p>
+</div>
+</section>
+<% else %>
+<h1 style="font-size: 26px; margin: 200px 150px; text-align: center;">
+Еще нет главной страницы! Подрочи базу и создай ее, хули если небыло времени на создание ее автоматом!
+</h1>
+<% end %>

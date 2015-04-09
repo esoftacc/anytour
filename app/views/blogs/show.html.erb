@@ -1,0 +1,96 @@
+<%
+metamagic title: @blog.meta_tag.title, description: @blog.meta_tag.description ,keywords: @blog.meta_tag.keywords
+%>
+<section id="coca-breadcrumb">
+  <div id="coca-breadcrumb-wrap" class="container">
+    <div id="breadcrumb" class="row">
+        <h1 class="page-title"><%= @blog.title %></h1>
+        <p class="page-intro">В блоге собраны полезные для путешествий статьи.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="white first">
+</section>
+  <% if @blog.articles.any? %>
+    <% @blog.articles.each do |article| %>
+		<section id="blog-content" class="white">
+		  <div id="main" class="container">
+		    <div id="main-wrap" class="row">
+		      <div id="primary" class="col-lg-9 col-md-9 col-sm-9">
+		        <div role="main">
+		          <% if article.published? or can? :update, @article %>
+		            <article class="post type-post category-blog" id="post-36">
+		              <div class="featured-image">
+		              	<% if can? :update, @article %>
+						  <div id="page_admin_tools_block" class="category_article_tools">
+						    <%= link_to edit_article_path(article), :class => 'page_admin_tool_button' do %>
+						      <i class="fa fa-pencil"></i>
+						    <% end %>
+						  </div>
+						<% end %>
+		                <%= link_to (image_tag article.image.url(:big), title: article.image_title, alt: article.image_title), article %>
+		              </div><!--/.featured-image-->
+		              <div class="coca-content-blog-content">
+		                <div class="left-entry-header blog-sing-content">
+		                  <span class="time-wrap"><time datetime="<%= article.created_at %>" class="entry-date"><span class="day"><%= article.created_at.day %></span><%=l article.created_at, format: :month_and_year %></time></span>
+		                </div>
+		                <div class="right-blog-conten-wrap">
+		                  <header class="entry-header">
+		                    <div class="right-entry-header">
+		                      <h2 class="entry-title">
+		                        <% if article.published? %>
+	                              <%= article.title %>
+	                            <% else %>
+	                              <%= link_to article, :style => "color: #9B1B00;" do %>
+	                                <%= article.title %>
+	                              <% end %>
+	                            <% end %>
+		                      </h2>
+		                    </div>
+		                  </header>
+		                  <div class="entry-meta">
+		                    <span class="by-author">By <a href="#" rel="bookmark">Leo Babauta </a></span>
+		                    <span class="post-category">
+		                        <a href="#" rel="bookmark" title="">Code</a>, <a href="#" rel="bookmark" title="">HTML5</a>
+		                    </span>
+		                    <span class="post-comment"><a href="#" rel="bookmark">18</a></span>
+		                  </div>
+		                  <div class="entry-excerpt">
+		                    <%= article.short_description %>
+		                    <%= link_to 'Read More →', article, class: 'readmore' %>
+		                  </div>
+		                </div>
+		              </div>
+		            </article>
+		          <% end %>
+		            Нет статей в Блоге!
+		          <div class="pagination">
+		            <ul>
+		              <li><span>3 of 155</span></li>
+		              <li><a class="prev" href="#"></a></li>
+		              <li><a href="#">1</a></li>
+		              <li><a href="#">2</a></li>
+		              <li><a class="active" href="#">3</a></li>
+		              <li><a href="#">4</a></li>
+		              <li><a href="#">5</a></li>
+		              <li><a class="next" href="#"></a></li>
+		              <li><a class="last" href="#">Last »</a></li>
+		            </ul>
+		          </div>
+		        </div>
+		      </div>
+		      <%= render 'articles/secondary_block' %>
+		    </div>
+		  </div>
+		</section>
+	<% end %>
+  <% else %>
+  	<section id="blog-content" class="white">
+  	  <div id="main" class="container">
+	    <div id="main-wrap" class="row">
+	  				Нет записей
+	  	</div>
+	  </div>
+  	</section>
+  <% end %>

@@ -1,0 +1,2 @@
+module DayImagesHelper
+end

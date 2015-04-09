@@ -1,0 +1,34 @@
+        <fieldset style="border-bottom: 1px solid rgba(0,0,0,0.2);">
+        <div style="margin: 10px auto; width:80%;">
+        <%= f.label 'Номер дня: ' %>
+        <%= f.text_field :day_num, style:'width:100px; text-anign: center;' %>
+        <div style="float: right;">
+        <%= f.check_box :_destroy %> <%= f.label :_destroy, "Удалить день" %>
+        </div>
+        </div>
+        <div style="width:80%; margin: 10px auto;">
+        <br>
+        <%= f.label :day_name, "Заголовок дня:" %><br>
+        <%= f.text_field :day_name %><br><br>
+        <%= f.label 'Описание дня:' %><br>
+        <%= f.cktext_area :day_desc %>
+        </div>
+
+        <div style="margin: 10px auto; width:80%;">
+        <br>
+        <%= f.label 'Дополнение к описанию дня:' %><br>
+        <%= f.text_field :day_note, style: "width:100%;" %>
+        </div>
+        <%= f.fields_for :day_images, :html => { :multipart => true } do |day_images| %>
+              <%= render 'day_image_fields', f: day_images %>
+        <% end %>
+        
+          <br>
+          <br>
+          <%= link_to_add_fields 'Добавить картинку', f, :day_images %>
+          <br>
+          <br>
+        </fieldset>
+
+
+

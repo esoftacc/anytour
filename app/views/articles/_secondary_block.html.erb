@@ -1,0 +1,42 @@
+<style>
+#subscribe .list-group h3 {
+color: #3E434A;
+background-color: #E7E7E7;
+font-size: 15px;
+text-align: center;
+text-transform: uppercase;
+padding: 10px 0 10px 0;
+border-top: 1px solid #DDD;
+border-left: 1px solid #DDD;
+border-right: 1px solid #DDD;
+}
+#subscribe .list-group .list-group-item {
+color: #555;
+}
+</style>
+<div id="secondary" class="widget-area right-widget single-widget col-lg-3 col-md-3 col-sm-3">
+  <aside id="subscribe" class="widget widget_subscribe">
+    <div class="list-group">
+      <h3>Категории</h3>
+      <% Blog.all.each do |menu_item| %>
+        <% if menu_item.published? or can? :update, @blog %>
+          <% if menu_item.published == true %>
+            <%= link_to menu_item, class: 'list-group-item' do %>
+              <i class="fa fa-<%= menu_item.menu_icon %> fa-fw"></i>&nbsp;&nbsp;&nbsp;<%= menu_item.title %>
+            <% end %>
+          <% else %>
+            <%= link_to menu_item, class: 'list-group-item', style: 'color: #9B1B00;' do %>
+              <i class="fa fa-<%= menu_item.menu_icon %> fa-fw" , style="color: #9B1B00;"></i>&nbsp;&nbsp;&nbsp;<%= menu_item.title %>
+            <% end %>
+          <% end %>
+        <% end %> 
+      <% end %>
+    </div>
+  </aside>
+  
+  <div class="clear-both line single-line"></div>
+  <aside id="text" class="widget widget_text">
+    <a href="#"><img alt="01 right banner" src="http://placehold.it/267x170/c3c3c3" title="banner"></a>
+    <a href="#"><img alt="01 right banner" src="http://placehold.it/267x170/c3c3c3" title="banner"></a>
+  </aside>
+</div>

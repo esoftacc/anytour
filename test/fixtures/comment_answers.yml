@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tour_comment_id: 1
+  author: MyString
+  answer_to: MyString
+  body: MyText
+
+two:
+  tour_comment_id: 1
+  author: MyString
+  answer_to: MyString
+  body: MyText

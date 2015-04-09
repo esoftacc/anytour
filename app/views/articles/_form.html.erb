@@ -1,0 +1,123 @@
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<style>
+.popover {
+  width: 500px;
+}
+</style>
+
+  <section class="white">
+    <div class="panel panel-default" style="margin: 0px 5% 0px 5%">
+      <div class="panel-body admin_tools_top">
+        <i class="fa fa-cogs menu_item_icon"></i>
+        <%= link_to '', articles_path, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
+        <%= link_to_unless_current( '', { action: "new" }, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
+        <%= f.submit 'сохранить', :class => "btn btn-success fa fa-plus fa-2 right", style: 'color: black; font-size: 12px; text-transform: uppercase; padding: 10px; margin-left: 15px;' %>
+      </div>
+    </div>
+  </section>
+
+  <ul class="nav nav-tabs admin-tabs">
+    <li class="active"><a href="#default-info" data-toggle="tab">Основная информация</a></li>
+    <li><a href="#seo-options" data-toggle="tab">Опции SEO и меток</a></li>
+  </ul>
+
+  <div class="tab-content">
+      <div class="tab-pane active" id="default-info">
+        <div id="admin-fields-block">
+          <fieldset style="width: 100%; display: inline-block; vertical-align:top;">
+            <div class="field">
+            <%= f.label :title, "Имя категории на китайском:" %><br>
+            <%= f.text_field :title, style: "width: 100%;", 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Это <H1> блок заголовка статьи, пишите в него красивое название с ключами.', 'data-trigger' => 'hover' %>
+            </div>
+            <br>
+            <div class="field">
+            <%= f.label :rus_title, "Имя категории на русском:" %><br>
+            <%= f.text_field :rus_title, style: "width: 100%;" %>
+            </div>
+            <br>
+            <div class="field">
+            <%= f.label :header, "Подзаголовок:" %><br>
+            <%= f.text_field :header, style: "width: 100%;", 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Это h2 блок подзаголовка статьи, тут нужно больше ключей.', 'data-trigger' => 'hover' %>
+            </div>
+            <br>
+            <div class="field" style="display: inline-block;">
+              <%= f.label :blog_id, 'Категория' %><br>
+              <%= f.collection_select(:blog_id, Blog.all, :id, :rus_title) %>
+            </div>
+            <div style="display: inline-block; margin-left: 40px;">
+              <%= f.check_box :published %>
+              <%= f.label :published, 'Опубликовать?' %>
+            </div>
+            <br>
+            <br>
+            <div class="field" style="min-width: 500px; display: inline-block; margin-right: 20px;" >
+            <%= f.label :short_description, "Короткое описание:" %><br>
+            <%= f.text_area :short_description, 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Текст в этом блоке должен содержать низкочастотные ключи.', 'data-trigger' => 'hover'  %>
+            </div>
+            <% if @article.image_file_size.nil? %>
+            <div class="field" style="width: 40%; display: inline-block; vertical-align: top; margin-top: 30px;">
+                <%= f.label :image_title, "Титл изображения:" %><br>
+                <%= f.text_field :image_title %><br>
+                <br>
+                <%= f.file_field :image %>
+            </div>
+            <% else %>
+            <div class="field" style="width: 40%; display: inline-block;">
+              <div style="width:50%; display: inline-block; vertical-align:top;">
+                  <%= image_tag @article.image.url(:mini), class: "img-thumbnail", title: @article.image_title %><br>
+              </div>
+              <div style="width:45%; display: inline-block; vertical-align:top; margin-left: 15px;">
+                  <%= f.label :image_title, "Титл изображения:" %><br>
+                  <%= f.text_field :image_title %><br>
+                  <%= f.check_box :delete_image %>
+                  <%= f.label :delete_image, "Удалить нахуй!" %><br><br>
+              </div>
+            </div>
+          <% end %>
+            <br>
+            <div class="field">
+            <br>
+              <%= f.label :description, "Полное описание:" %><br>
+              <%= f.cktext_area :description, style: "max-width: 100%;" %>
+            </div>
+        </fieldset>
+      </div>
+  </div>
+
+    <div class="tab-pane" id="seo-options">
+      <div id="admin-fields-block" style="min-height: 400px;">
+        <%= f.fields_for :meta_tag do |meta_tag| %>
+        <fieldset style=" width: 100%; display: inline-block; vertical-align:top;">
+          <div class="field">
+            <%= meta_tag.label :title, 'Титл страницы:' %><br>
+            <%= meta_tag.text_field :title, style: 'width:100%;', 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Выводится в поисковике и браузере как заголовок.', 'data-trigger' => 'hover'  %>
+          </div>
+          <br>
+          <div class="field">
+            <%= meta_tag.label :description, 'Описание страницы:' %><br>
+            <%= meta_tag.text_field :description, style: 'width:100%;', 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Выводится в поисковике под заголовком - описывает страницу, не более 255 символов.', 'data-trigger' => 'hover'  %>
+          </div>
+          <br>
+          <div class="field">
+            <%= meta_tag.label :keywords, 'Ключевые слова:' %><br>
+            <%= meta_tag.text_field :keywords, style: 'width:100%;', 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Ключевые слова через запятую, не более 255 символов.', 'data-trigger' => 'hover'  %>
+          </div>
+        </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <section class="first">
+  </section>
+<% end %>
