@@ -4,7 +4,7 @@ lock '3.4.0'
 set :application, 'anytour'
 set :repo_url, 'git@github.com:esoftacc/anytour.git'
 set :deploy_to, '/opt/www/anytour'
-set :user, 'deploy'
+set :user, 'esoft'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
 
