@@ -7,9 +7,9 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-role :app, %w{esoft@59.188.136.7}
-role :web, %w{esoft@59.188.136.7}
-role :db,  %w{esoft@59.188.136.7}
+role :app, %w{deploy@59.188.136.7}
+role :web, %w{deploy@59.188.136.7}
+role :db,  %w{deploy@59.188.136.7}
 
 # role-based syntax
 # ==================
