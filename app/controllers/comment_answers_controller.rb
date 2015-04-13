@@ -7,7 +7,7 @@ class CommentAnswersController < ApplicationController
     end
     
     def comment_params
-      params.require(:comment_answer).permit( :id, :tour_comment_id, :author, :answer_to, :body, :tour_id :_destroy )
+      params.require(:comment_answer).permit( :id, :tour_comment_id, :author, :answer_to, :body, :tour_id, :_destroy )
     end
 
 end
