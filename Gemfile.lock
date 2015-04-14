@@ -93,8 +93,8 @@ GEM
     execjs (2.3.0)
     fancybox2-rails (0.2.8)
       railties (>= 3.1.0, < 5.0)
-    font-awesome-sass (4.3.2.1)
-      sass (~> 3.2)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -241,7 +241,7 @@ DEPENDENCIES
   debugger
   devise
   fancybox2-rails (~> 0.2.8)
-  font-awesome-sass
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   less-rails

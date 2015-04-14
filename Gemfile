@@ -53,7 +53,7 @@ gem 'libv8', '~> 3.11.8.3'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-gem 'font-awesome-sass' #Icons gem
+gem 'font-awesome-rails' #Icons gem
 
 # JQuery bootstrap form validation gem
 gem 'bootstrap-validator-rails'
