@@ -39,7 +39,7 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 
 $('.bs-example').carousel({
-  interval: 1000
+  interval: 80000
 })
 
 
