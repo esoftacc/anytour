@@ -1,0 +1,23 @@
+<fieldset style="border-bottom: 1px solid rgba(0,0,0,0.15);">
+<%= f.label :title, "Титл картинки:" %><br>
+<%= f.text_field :title, style: "width: 50%; display: inline-block;" %><br>
+<%= f.label :url, "Ссылка на тур:" %><br>
+<%= f.text_field :url, style: "width: 90%;" %><br>
+<%= f.label :label, "Заголовок слайда:" %>
+<%= f.text_field :label, style: "width: 90%;" %><br>
+<%= f.label :description, "Описание слайда:" %>
+<%= f.text_field :description, style: "width: 90%;" %><br><br>
+
+<div style="text-align: center; ">
+  <% if f.object.slide_image? %>
+	<p>
+	<%= image_tag f.object.slide_image.url(:slide), class: "img-thumbnail", width: '600' %><br>
+	<%= f.check_box :_destroy %>
+	<%= f.label 'Удалить' %><br>
+	<br>
+	</p>
+  <% else %>
+  <%= f.file_field :slide_image %>
+  <% end %>
+</div>
+</fieldset>
