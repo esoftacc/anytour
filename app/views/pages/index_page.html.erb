@@ -22,7 +22,7 @@ metamagic title: @page.meta_tag.title, description: @page.meta_tag.description ,
         <% if slide.first == true %> 
         <div class="item active">
           <a href="<%= slide.url %>">
-          <%= image_tag slide.slide_image.url(:slide), :'data-holder-rendered' =>"true", title: slide.title, alt: slide.title, style: 'width:100%' %>
+          <%= image_tag slide.slide_image.url(:slide), :'data-holder-rendered' =>"true", title: slide.title, alt: slide.title %>
           <div class="carousel-caption">
             <h4><%= slide.label %></h4>
             <p><%= slide.description %></p>
@@ -32,7 +32,7 @@ metamagic title: @page.meta_tag.title, description: @page.meta_tag.description ,
         <% else %>
         <div class="item">
           <a href="<%= slide.url %>">
-          <%= image_tag slide.slide_image.url(:slide), :'data-holder-rendered' =>"true", title: slide.title, alt: slide.title, style: 'width:100%' %>
+          <%= image_tag slide.slide_image.url(:slide), :'data-holder-rendered' =>"true", title: slide.title, alt: slide.title %>
           <div class="carousel-caption">
             <h4><%= slide.label %></h4>
             <p><%= slide.description %></p>
