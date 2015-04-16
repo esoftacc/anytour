@@ -1,3 +1,4 @@
+<%= tinymce %>
 <%= form_for(@page) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
@@ -77,7 +78,7 @@
             <br>
             <div class="field">
               <%= f.label :body, 'Текст страницы:' %><br>
-              <%= f.cktext_area :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} } %>
+              <%= f.text_area :body, :class => "tinymce", :rows => 40, :cols => 120 %>
             </div>
           <% end %>
         </fieldset>
