@@ -7,8 +7,6 @@ set :deploy_to, '/opt/www/anytour'
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 
-
-
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
