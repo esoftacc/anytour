@@ -16,5 +16,5 @@
 !/log/.keep
 /tmp
 
-/public/system
-/pubic/ckeditor_assets
+public/system/*
+public/uploads/*
