@@ -1,7 +1,7 @@
 language : 'ru'
 
 toolbar:
-  - fullscreen code | bold italic underline | fontsizeselect | fontselect | bullist numlist outdent indent | table | alignleft aligncenter alignjustify alignright | undo redo | pastetext pasteword selectall |  uploadimage link image
+  - fontsizeselect | bold italic underline | | fontselect | bullist numlist outdent indent | table | alignleft aligncenter alignjustify alignright | undo redo | pastetext pasteword selectall |  uploadimage link image | fullscreen code |
    
 plugins:
   - advlist
