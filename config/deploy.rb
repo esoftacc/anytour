@@ -49,6 +49,6 @@ namespace :deploy do
     end
   end
 
-after 'deploy:restart', 'symlink_shared'
+after 'deploy:restart'
 
 end
