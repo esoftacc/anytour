@@ -38,9 +38,8 @@ gem 'will_paginate'
 # Use SEO meta tags with everyone page
 gem 'metamagic'
 
-# CKEditor and file upload gems
-gem 'ckeditor'
-gem 'responders'
+# TinyMCE
+gem 'tinymce-rails'
 
 # JQuery image poupap window gem
 gem 'fancybox2-rails', '~> 0.2.8'

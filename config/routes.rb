@@ -15,8 +15,6 @@ Rails.application.routes.draw do
     end
   end
 
-  mount Ckeditor::Engine => '/ckeditor'
-
 
 
 

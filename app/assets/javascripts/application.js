@@ -15,7 +15,7 @@
 //= require twitter/bootstrap
 //= require bootstrapValidator.min
 //= require fancybox
-//= require ckeditor/init
+//= require tinymce-jquery
 //= require turbolinks
 //= require_tree .
 
