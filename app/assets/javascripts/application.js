@@ -28,7 +28,7 @@ tinymce.init({
   skin : "o2k7",
   fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
   selector : "#wysiwyg",
-  plugins: "uploadimage,code,image",
+  plugins: "uploadimage, advlist, autolink, lists, link, image, charmap, print, preview, hr, anchor, pagebreak, searchreplace, wordcount, visualblocks, visualchars, code, fullscreen, insertdatetime, media, nonbreaking, save, table, contextmenu, directionality, emoticons, template, paste, textcolor, colorpicker, textpattern",
   theme_advanced_buttons3 : "uploadimage,image",
  });
 

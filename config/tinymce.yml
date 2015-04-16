@@ -1,13 +1,36 @@
 language : 'ru'
 
 toolbar:
-  - fontsizeselect | bold italic underline | | fontselect | bullist numlist outdent indent | table | alignleft aligncenter alignjustify alignright | undo redo | pastetext pasteword selectall |  uploadimage link image | fullscreen code |
+  - fontsizeselect | bold italic underline | forecolor backcolor | fontselect | bullist numlist outdent indent | table | alignleft aligncenter alignjustify alignright | undo redo | pastetext pasteword selectall |  uploadimage link image | fullscreen code preview |
    
 plugins:
-  - advlist
-  - image
-  - link
-  - uploadimage
-  - code
-  - table
-  - fullscreen
+ - uploadimage
+ - advlist 
+ - autolink 
+ - lists 
+ - link 
+ - image 
+ - charmap 
+ - print 
+ - preview 
+ - hr 
+ - anchor 
+ - pagebreak
+ - searchreplace 
+ - wordcount 
+ - visualblocks 
+ - visualchars 
+ - code fullscreen
+ - insertdatetime 
+ - media 
+ - nonbreaking 
+ - save 
+ - table 
+ - contextmenu 
+ - directionality
+ - emoticons 
+ - template 
+ - paste 
+ - textcolor 
+ - colorpicker 
+ - textpattern
