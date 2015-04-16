@@ -1,6 +1,13 @@
+language : 'ru'
+
 toolbar:
-  - styleselect | bold italic | undo redo
-  - image | link
+  - fullscreen code | bold italic underline | fontsizeselect | fontselect | bullist numlist outdent indent | table | alignleft aligncenter alignjustify alignright | undo redo | pastetext pasteword selectall |  uploadimage link image
+   
 plugins:
+  - advlist
   - image
   - link
+  - uploadimage
+  - code
+  - table
+  - fullscreen

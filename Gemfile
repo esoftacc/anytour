@@ -40,6 +40,8 @@ gem 'metamagic'
 
 # TinyMCE
 gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+gem 'tinymce-rails-langs'
 
 # JQuery image poupap window gem
 gem 'fancybox2-rails', '~> 0.2.8'

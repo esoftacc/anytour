@@ -15,12 +15,23 @@
 //= require twitter/bootstrap
 //= require bootstrapValidator.min
 //= require fancybox
+//= require tinymce
 //= require tinymce-jquery
 //= require turbolinks
 //= require_tree .
 
 
 // This is call javascripts how use Bootstrap 
+
+tinymce.init({
+  mode: 'textareas',
+  skin : "o2k7",
+  fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+  selector : "#wysiwyg",
+  plugins: "uploadimage,code,image",
+  theme_advanced_buttons3 : "uploadimage,image",
+ });
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })

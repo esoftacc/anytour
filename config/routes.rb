@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+  post '/tinymce_assets' => 'tinymce_assets#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
