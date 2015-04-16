@@ -49,11 +49,6 @@ namespace :deploy do
     end
   end
 
-#task :symlink_shared do
-#    run "cp -a {deploy_to}/current/public"
-#    run "ln -nsf #{shared_path}/uploads #{release_path}/public/uploads"
-#end
-
 after 'deploy:restart', 'symlink_shared'
 
 end
