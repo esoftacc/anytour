@@ -5,8 +5,7 @@ set :application, 'anytour'
 set :repo_url, 'git@github.com:esoftacc/anytour.git'
 set :deploy_to, '/opt/www/anytour'
 set :user, 'deploy'
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
-
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 
 
 # Default branch is :master
@@ -50,10 +49,10 @@ namespace :deploy do
     end
   end
 
-task :symlink_shared do
-    run "rm -rf  #{current_path}/public/uploads"
-    run "ln -nsf #{shared_path}/uploads #{release_path}/public/uploads"
-end
+#task :symlink_shared do
+#    run "cp -a {deploy_to}/current/public"
+#    run "ln -nsf #{shared_path}/uploads #{release_path}/public/uploads"
+#end
 
 after 'deploy:restart', 'symlink_shared'
 
