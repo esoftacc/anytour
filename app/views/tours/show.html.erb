@@ -44,17 +44,17 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
 
   <div class="tour_spec">
     <div class="tour_spec_block">
-      <div class="well well-small" data-container="body" data-toggle="popover" data-placement="left" data-content="Общая продолжительность тура." data-trigger="hover">
+      <div class="well well-small" data-container="body" data-toggle="popover" data-placement="left" data-content="旅行总时间." data-trigger="hover">
         <span class="spec_icon pe-7s-clock"></span>
         <p><%= @tour.has_many_day %>天 - <%= @tour.has_many_night %>夜</p>
       </div>
 
-      <div class="well well-small" data-container="body" data-toggle="popover" data-placement="left" data-content="Сезон проведения тура." data-trigger="hover">
+      <div class="well well-small" data-container="body" data-toggle="popover" data-placement="left" data-content="旅游季" data-trigger="hover">
         <span class="spec_icon pe-7s-sun"></span>
         <p><%= @tour.season %></p>
       </div>
 
-      <div class="well well-small" data-container="body" data-toggle="popover" data-placement="left" data-content="Минимальное и максимальное число путешествующих людей." data-trigger="hover">
+      <div class="well well-small" data-container="body" data-toggle="popover" data-placement="left" data-content="最少和最多人数" data-trigger="hover">
         <span class="spec_icon pe-7s-users"></span>
         <p><%= @tour.min_group_count %> - <%= @tour.max_group_count %>人</p>
       </div>
@@ -68,19 +68,20 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
   <div class="question_icon"><span class="pe-7s-help1"></span></div>
 
   <div class="question_text">
-    <h3 class="section-whtitle left-effect">Возникли вопросы?</h3>
-    <p>Если у Вас есть вопросы, свяжитесь с нашим специалистом и уточните все интересующие моменты!</p>
+    <h3 class="section-whtitle left-effect">出现问题？</h3>
+    <p>如果您有任何问题，请联系我们的专业人员，确定所有问题!</p>
   </div>
 
   <div id="question_btn">  
     <button type="button" id="question_btn" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-    Задать вопрос</button>
+    提问
+    </button>
   </div>
 </section>
 
 
 <section id="tour_days" class="white">
-  <div class="pe-7s-compass tour_block_image"><p class="tour_block_title">Программа поездки</p></div>
+  <div class="pe-7s-compass tour_block_image"><p class="tour_block_title">旅行日程</p></div>
     <% @tour.tour_days.each do |tour_day| %>
       <div class="testimonal">
         <p class="day_heading"><%= tour_day.day_name %></p>
@@ -114,14 +115,14 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
   <div id="services">
 
     <div class="included_services">
-      <p class="heading">Список услуг включенных в путевку</p>
+      <p class="heading">旅行包括服务单</p>
       <ul>
           <%= raw @tour.included_services %>
       </ul>
     </div>
 
     <div class="not_included_services">
-      <p class="heading">Список услуг не включенных в путевку</p>
+      <p class="heading">旅行不包括服务单</p>
       <ul>
         <%= raw @tour.not_included_services %>
       </ul>
