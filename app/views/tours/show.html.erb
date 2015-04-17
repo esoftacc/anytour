@@ -85,11 +85,9 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
     <% @tour.tour_days.each do |tour_day| %>
       <div class="testimonal">
         <p class="day_heading"><%= tour_day.day_name %></p>
-
         <div class="day_layout">
         <%= raw tour_day.day_desc %>
         </div>
-
         <% if tour_day.day_note.empty? %>
         <% else %>
           <div class="day_note"><span class="pe-7s-info"></span><span><%= tour_day.day_note %></span></div>
@@ -103,7 +101,6 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
             <% end %>
           <% end %>
         </div>
-
       </div>
     <% end %>
   </div>
