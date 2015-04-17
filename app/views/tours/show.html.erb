@@ -111,7 +111,7 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
 
 
 <section class="included_in_tour">
-  <div class="pe-7s-check tour_block_image"><p class="tour_block_title">Услуги включенные в оплачиваемый тур</p></div>
+  <div class="pe-7s-check tour_block_image"><p class="tour_block_title">旅行包括和不括服务单</p></div>
   <div id="services">
 
     <div class="included_services">
@@ -183,14 +183,14 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="question_modal_label">Задать вопрос</h4>
+        <h4 class="modal-title" id="question_modal_label">提问</h4>
       </div>
       <div class="modal-body">
        <%= render "tour_question", f: question %>
       </div>
       <div class="modal-footer">
 
-        <%= question.submit 'Отправить', :class => "btn btn-primary" %>
+        <%= question.submit '发送', :class => "btn btn-primary" %>
       </div>
     </div>
   </div>

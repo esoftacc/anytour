@@ -14,28 +14,28 @@
     </div>
   <% end %>
   <div class="control-group col-md-6">
-    <%= f.label :email, 'Ваш Email:', :class => 'control-label' %>
+    <%= f.label :email, '邮箱:', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :email, :class => 'form-control' %>
     </div>
     <%= error_span(@question[:email]) %>
   </div>
   <div class="control-group col-md-6">
-    <%= f.label :name, 'Ваше имя:', :class => 'control-label' %>
+    <%= f.label :name, '姓名:', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
     <%= error_span(@question[:name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :title, 'Заголовок:', :class => 'control-label' %>
+    <%= f.label :title, '主题:', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'form-control' %>
     </div>
     <%= error_span(@question[:title]) %>
   </div>
   <div class="control-group">
-    <%= f.label :body, 'Опишите ваш вопрос:', :class => 'control-label' %>
+    <%= f.label :body, '写下您的问题:', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :body, :class => 'form-control question_text_area' %>
     </div>
