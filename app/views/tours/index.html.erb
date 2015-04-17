@@ -35,7 +35,7 @@ metamagic title: 'Управление турами'
         <tr>
           <td><%=link_to tour.rus_title, tour %></td>
           <td><%= tour.price %></td>
-          <td><%= Category.find(tour.category_id).rus_title %></td>
+          <td></td>
           <td width="100" class="center">
             <% if tour.published? %>
               <i class="fa fa-check" style="color: #009B18; font-size: 19px;"></i>
