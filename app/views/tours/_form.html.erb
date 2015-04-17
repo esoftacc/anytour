@@ -1,0 +1,193 @@
+
+<%= form_for @tour do |f| %>
+  <% if @tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% @tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="white">
+    <div class="panel panel-default" style="margin: 0px 5% 0px 5%">
+      <div class="panel-body admin_tools_top">
+        <i class="fa fa-cogs menu_item_icon"></i>
+        <%= link_to '', tours_path, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
+        <%= link_to_unless_current( '', { action: "new" }, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
+        <%= f.submit 'сохранить', :class => "btn btn-success fa fa-plus fa-2 right", style: 'color: black; font-size: 12px; text-transform: uppercase; padding: 10px; margin-left: 15px;' %>
+      </div>
+    </div>
+  </section>
+
+    <ul class="nav nav-tabs admin-tabs">
+      <li class="active"><a href="#default-info" data-toggle="tab">Основная информация</a></li>
+      <li><a href="#tour-days" data-toggle="tab">Дни тура</a></li>
+      <li><a href="#included" data-toggle="tab">Включено в тур</a></li>
+      <li><a href="#seo-options" data-toggle="tab">Опции SEO и меток</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="default-info">
+        <div id="admin-fields-block">
+          <fieldset style="width: 50%; display: inline-block; vertical-align:top;">
+            <div class="field">
+            <%= f.label :title, "Заголовок:" %><br>
+            <%= f.text_field :title %>
+            <br>
+            <br>
+            <%= f.label :rus_title, "Русский заголовок:" %><br>
+            <%= f.text_field :rus_title, style: 'width: 100%;' %>
+            </div>
+            <br>
+            <div class="field">
+            <%= f.label :short_description, "Короткое описание:" %><br>
+            <%= f.text_area :short_description %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :description, "Полное описание:" %><br>
+              <%= f.text_area :description %>
+            </div>
+
+          </fieldset>
+
+          <fieldset style="width: 40%; display: inline-block; vertical-align:top;">
+
+            <div class="field">
+              <%= f.label :has_many_day, "Колличество дней:" %><br>
+              <%= f.number_field :has_many_day %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :has_many_night, "Колличество ночей:" %><br>
+              <%= f.number_field :has_many_night %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :season, "Сезон:" %><br>
+              <%= f.text_field :season %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :min_group_count, "Минимально в группе:" %><br>
+              <%= f.number_field :min_group_count %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :max_group_count, "Максимально в группе:" %><br>
+              <%= f.number_field :max_group_count %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :price, "Цена:" %><br>
+              <%= f.number_field :price %>
+            </div>
+            <br>
+            <div class="field">
+              <%= f.label :category_id %><br>
+              <%= f.collection_select(:category_id, Category.all, :id, :rus_title) %>
+              <br>
+              <br>
+              <%= f.check_box :published %>
+              <%= f.label :published, 'Опубликовать?' %>
+            </div>
+          </fieldset>
+          <fieldset>
+            <% if @tour.image_file_size.nil? %>
+            <div class="field">
+              <%= f.label :image_title, "Титл изображения:" %><br>
+              <%= f.text_field :image_title %><br>
+              <%= f.file_field :image %>
+            </div>
+            <% else %>
+            <div class="field">
+              <div style="width:25%; display: inline-block; vertical-align:top;">
+                <%= image_tag @tour.image.url(:mini), class: "img-thumbnail", title: @tour.image_title %><br>
+              </div>
+              <div style="width:22%; display: inline-block; vertical-align:top;">
+                <%= f.label :image_title, "Титл изображения:" %><br>
+                <%= f.text_field :image_title %><br>
+                <%= f.check_box :delete_image %>
+                <%= f.label :delete_image, "Удалить нахуй!" %><br><br>
+              </div>
+            </div>
+            <% end %>
+            <br>
+            <br>
+            <br>
+            <div class="field">
+              <%= f.label :place %><br>
+              <%= f.text_field :place %>
+            </div>
+            <div class="field">
+              <%= f.label :place_info %><br>
+              <%= f.text_field :place_info %>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="tab-pane" id="tour-days">
+        <div id="admin-fields-block">
+            <%= f.fields_for :tour_days do |builder| %>
+              <%= render 'tour_day_fields', f: builder %> 
+            <% end %>
+              <br>
+              <br>
+              <%= link_to_add_fields 'Добавить день', f, :tour_days %> <br>
+              <br>
+              <br>
+        </div>
+      </div>
+      <div class="tab-pane" id="seo-options">
+      <div id="admin-fields-block" style="min-height: 400px;">
+        <%= f.fields_for :meta_tag do |meta_tag| %>
+        <fieldset style=" width: 100%; display: inline-block; vertical-align:top;">
+          <div class="field">
+            <%= meta_tag.label :title, 'Титл страницы:' %><br>
+            <%= meta_tag.text_field :title, style: 'width:100%;', 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Выводится в поисковике и браузере как заголовок.', 'data-trigger' => 'hover'  %>
+          </div>
+          <br>
+          <div class="field">
+            <%= meta_tag.label :description, 'Описание страницы:' %><br>
+            <%= meta_tag.text_field :description, style: 'width:100%;', 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Выводится в поисковике под заголовком - описывает страницу, не более 255 символов.', 'data-trigger' => 'hover'  %>
+          </div>
+          <br>
+          <div class="field">
+            <%= meta_tag.label :keywords, 'Ключевые слова:' %><br>
+            <%= meta_tag.text_field :keywords, style: 'width:100%;', 'data-container' => 'body', 'data-toggle' => 'popover', 'data-placement' => 'top', 'data-content' => 'Ключевые слова через запятую, не более 255 символов.', 'data-trigger' => 'hover'  %>
+          </div>
+        </fieldset>
+        <% end %>
+      </div>
+    </div>
+      <div class="tab-pane" id="included">
+        <div style="padding-top: 40px">
+          <div class="remember_block">
+            <h4 style="font-weight: bold; text-align: center;">Помни как правильно!</h4>
+            <p>Для правильного отображения на странице, нужно писать в блоках по этому шаблону:</p>
+            <p style="text-align: center;"><code>&lt;li&gt; Данная услуга включена либо не включена в тур&lt;/li&gt;&lt;br&gt;</code></p>
+          </div>
+          <div class="field" style="width: 830px; margin: 0px auto 0px auto; padding-top: 40px;">
+            <%= f.label :included_services, "Услуги включенные в тур:"%><br>
+            <%= f.text_area :included_services, style: "min-height: 350px; max-width: 800px;" %>
+          </div>
+          <div class="field" style="width: 830px; margin: 0px auto 0px auto; padding-top: 40px;">
+            <%= f.label :not_included_services, "Услуги не включенные в тур:" %><br>
+            <%= f.text_area :not_included_services, style: "min-height: 350px; max-width: 800px;" %>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            
+          </div>
+        </div>  
+      </div>
+    </div>
+  <section class="first">
+  </section>
+<% end %>
