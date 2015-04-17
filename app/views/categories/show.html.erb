@@ -53,7 +53,7 @@ metamagic title: @category.meta_tag.title, description: @category.meta_tag.descr
                           <%= tour.title %>
                         <% end %>
                       <% else %>
-                        <%= link_to tour, :style => "color: #9B1B00;" do %>
+                        <%= link_to tour, :style => "color: #9B1B00;", method: :get do %>
                           <%= tour.title %>
                         <% end %>
                       <% end %>

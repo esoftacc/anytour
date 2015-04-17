@@ -151,7 +151,7 @@
 				          		<% if category.published == true %>
 				          	  	  <li><%= link_to category.name, category %></li>
 				          	  	<% else %>
-				                  <li><%= link_to category.name, category, style: 'color: #9B1B00;' %></li>
+				                  <li><%= link_to category.name, category, method: :get, style: 'color: #9B1B00;' %></li>
 				                <% end %>
 				              <% end %>
 		                    <% end %>
