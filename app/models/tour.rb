@@ -1,6 +1,6 @@
 class Tour < ActiveRecord::Base
 	
-	has_many   :tour_days, 	  							    dependent: :destroy
+	has_many   :tour_days, -> { order(id: :asc) },         dependent: :destroy
 	has_many   :tour_comments,  							dependent: :destroy
 	has_many   :questions,  							    dependent: :destroy
 	has_one    :meta_tag,                                   dependent: :destroy
@@ -15,5 +15,4 @@ class Tour < ActiveRecord::Base
 
   	attr_accessor :delete_image
 	before_validation { image.clear if delete_image == '1' }
-
 end

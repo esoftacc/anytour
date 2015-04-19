@@ -1,5 +1,4 @@
 class TourDay < ActiveRecord::Base
-
 	belongs_to :tour
 	has_many   :day_images, dependent: :destroy
 
