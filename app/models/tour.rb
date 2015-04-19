@@ -1,6 +1,6 @@
 class Tour < ActiveRecord::Base
 	
-	has_many   :tour_days, -> { order(id: :asc) },         dependent: :destroy
+	has_many   :tour_days, -> { order(day_num: :asc) },         dependent: :destroy
 	has_many   :tour_comments,  							dependent: :destroy
 	has_many   :questions,  							    dependent: :destroy
 	has_one    :meta_tag,                                   dependent: :destroy
