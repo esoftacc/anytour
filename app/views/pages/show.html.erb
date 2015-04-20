@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
+<section id="coca-breadcrumb">
+          <div id="coca-breadcrumb-wrap" class="container">
+            <div id="breadcrumb" class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <h3 class="page-title"><%= @page.title %></h3>
+              </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<p>
-  <strong>Title:</strong>
-  <%= @page.title %>
-</p>
-
-<p>
   <strong>Body:</strong>
-  <%= @page.body %>
-</p>
+  <%=raw @page.body %>
 
-<p>
-  <strong>Index:</strong>
-  <%= @page.index %>
-</p>
 
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>

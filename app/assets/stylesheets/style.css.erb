@@ -743,6 +743,7 @@ textarea:focus {
 	font-size:18px;
 	line-height: 24px;
 	margin-bottom:10px;
+	text-align: center;
 }
 aside p {
 	font-size:16px;
@@ -1715,6 +1716,39 @@ width: 27%;
 float: right;
 
 }
+#toTop {
+	font-size: 25px;
+	width:40px;
+	height: 40px;
+	background: rgba(233, 40, 12, 0.81);
+	text-align:center;
+	position:fixed;
+	bottom:10px; 
+	right:10px;
+	cursor:pointer;
+	display:none;
+	z-index: 999;
+	color: rgba(255, 255, 255, 0.6);
+	border-radius: 3px;
+	-o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; 
+}
+#toTop:hover {
+	background: rgba(233, 40, 12, 1);
+}
+#toTop i {
+	-o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+#toTop:hover i {
+	color: rgba(255, 255, 255, 0.8);
+}
 .tour_spec .tour_spec_block {
 margin: 20px 10px 20px 10px;
 border: 1px solid rgba(0,0,0,0.2);
@@ -1996,7 +2030,7 @@ border-radius: 5px;
 #tour_content {
 	padding-top: 20px; 
 	text-align: left;
-	width: 55%;
+	width: 50%;
 	margin-left: 10px;
 	display: inline-block;
 }
@@ -2175,10 +2209,55 @@ font-family: "Pe-icon-7-stroke";
 	text-decoration: underline;
 }
 /* footer */
+#footer_logo {
+	background: url(<%= asset_path 'footer_logo.png' %>) no-repeat;
+	display: block;
+	width: 81px;
+	height: 81px;
+	margin: 0px auto;
+}
+.widget_meta h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+.footer_site_description {
+	background-color: rgba(0, 0, 0, 0.44);
+	border-radius: 3px;
+	padding: 10px;
+	width: 90%;
+	margin: 0px auto
+
+}
+.footer_news_wrap {
+	margin-top: 44px;
+}
+.footer_site_description .subs_submit {
+	width: auto!important;
+	margin: 20px auto 10px 26%;
+}
 footer.site-footer {
 	background: #2c3339;
 	padding:60px 0;
 	color:#8c989e;
+}
+#footer_contact_icon {
+	font-size: 18px;
+	margin-bottom: 10px;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+	width: 90%;
+}
+#footer_contact_icon i {
+	color: #B01D09;
+	margin: 0px 15px 0px 10px;
+	text-shadow: -1px -1px 0px rgba(0,0,0,1);
+	cursor: default;
+}
+#footer_contact_icon p {
+	display: inline-block;
+	font-size: 16px;
+	color: #8C989E;
 }
 .footer-sidebar .widget-title {
 	color:#ffffff;

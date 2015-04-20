@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<div id="toTop"><i class="fa fa-chevron-up"></i></div>
 <body>
 <% if can? :create, @category %>
 	<div id="admin_panel">
@@ -202,40 +203,44 @@
 	          <div class="sidebar footer-sidebar clearfix">
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget first footer-widget">
 	              <div id="meta" class="widget widget_meta">
-	                <h3 class="widget-title">Paramount</h3>
-	                <p>The alarming thing is, the mistakes that produce these regrets are all errors of omission. You forget your dreams, ignore your family, suppress your feelings, neglect your friends, and forget to be happy. </p>
+	              	<div id="footer_logo"></div>
+	                <h3 class="widget-title">Enitour.com</h3>
+	                <div class="footer_site_description">
+	                <p>У нас вы сможете купить туры в любую точку России по самым низким ценам и получить скидки на семейные поездки!</p>
+	                </div>
+	              		
 	              </div>
 	            </div>
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget footer-widget">
 	              <div id="tweet" class="widget widget_tweet">
-	                <h3 class="widget-title">Twitter</h3>
-	                <p>A showcase of traditionally hard CSS problems, easily solved using flexbox.</p>
-	                <a href="#">http://t.co/40aOhYRtjC </a>
-	                <p>via <a href="#">@philwalton</a></p>
-	                <p><span><a href="#">2 months ago</a></span></p>
+	                <h3 class="widget-title">Служебные страницы</h3>
+	                	<% Page.all.where(footer: true).each do |footer_pages| %>
+	              			<li><%= link_to footer_pages.rus_title, footer_pages %></li>
+	              		<% end %>
 	              </div>
 	            </div>
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget footer-widget">
+	            <div class="footer_news_wrap">
 	              <div id="get_touch" class="widget widget_get_touch">
-	                <h3 class="widget-title">Get In Touch</h3>
-	                <p><span>Address:</span> 1600 Pennsylvania Ave NW, Washington, DC 20500</p>
-	                <p><span>PhTour:</span> (202) 456-1111</p>
-	                <p><span>Email:</span> <a href="mailto:obama@whitehouse.com">obama@whitehouse.com</a></p>
-	                <ul class="footer-tweet">
-	                  <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-	                  <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-	                  <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-	                </ul>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Данные для связи по Skype"><i class="fa fa-skype"></i><p>help-enitour</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Адрес электронной почты"><i class="fa fa-envelope-o"></i><p>help@enitour.com</p></div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Номер для связи по QQ"><i class="fa fa-qq"></i><p>2717351489</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Номер телефона оператора"><i class="fa fa-phone"></i><p>15807565719</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="ID оператора в системе WeChat"><i class="fa fa-weixin"></i><p>help-enitour</p> </div>
 	              </div>
 	            </div>
+	            </div>
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget last footer-widget">
-	              <div id="newsletter-wrap" class="widget widget_get_touch">
-	                <h3 class="widget-title">Newsletter</h3>
-	                <p>Subscribe to our newsletter! Get tips, product updates and special offers.</p>
+	              <div id="newsletter-wrap" class="widget widget_get_touch footer_news_wrap">
+	                <div class="footer_site_description">
+	                Вы можете подписаться на рассылку свежих новостей и получать информацию о всех акциях и новых турах! 
+
 	                <form novalidate="" class="" name="cc-embedded-subscribe-form" method="post" action="index.html" id="subscribe_form">
-	                <input type="text" required placeholder="mail@example.com" id="mce-EMAIL" class="subs_input" name="EMAIL" value="">
-	                <input type="submit" class="subs_submit" value="Join" name="subscribe">
+	                <input type="text" required placeholder="邮箱" id="mce-EMAIL" class="subs_input" name="EMAIL" value="">
+	                <input type="submit" class="subs_submit" value="Подписаться" name="subscribe">
 	                </form>
+
+	                </div>
 	              </div>
 	            </div>
 	          </div>

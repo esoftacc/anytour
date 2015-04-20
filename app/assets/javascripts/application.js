@@ -65,3 +65,28 @@ $(document).ready(function() {
     }
   });
 });
+
+
+
+$(function() {
+ 
+$(window).scroll(function() {
+ 
+if($(this).scrollTop() > 800) {
+ 
+$('#toTop').fadeIn();
+ 
+} else {
+ 
+$('#toTop').fadeOut();
+ 
+}
+ 
+});
+ 
+$('#toTop').click(function() {
+$("html, body").animate({ scrollTop: 0 }, 600);
+return false;
+});
+ 
+});
