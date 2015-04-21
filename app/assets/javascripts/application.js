@@ -72,7 +72,7 @@ $(function() {
  
 $(window).scroll(function() {
  
-if($(this).scrollTop() > 800) {
+if($(this).scrollTop() >= 800) {
  
 $('#toTop').fadeIn();
  
