@@ -44,7 +44,7 @@
 		    <div id="collapseBlog" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBlog">
 		      <div class="admin_panel_submenu">
 		        <%= link_to 'Категории', blogs_path, class: 'admin_submenu_item' %>
-		        <%= link_to 'Управление статьями', articles_path, class: 'admin_submenu_item' %>
+		        <%= link_to 'Управление статьями', articles_path, class: 'admin_submenu_item'%>
 		      </div>
 		  	</div>
 		  </div>
@@ -91,7 +91,7 @@
 		    <div id="collapsePages" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPages">
 		      <div class="admin_panel_submenu">
 		        <%= link_to 'Изменение главной', edit_page_path(1), class: 'admin_submenu_item' %>
-		        <%= link_to 'Служебные страницы', pages_path, class: 'admin_submenu_item' %>
+		        <%= link_to 'Информ страницы', pages_path, class: 'admin_submenu_item' %>
 		      </div>
 		    </div>
 		  </div>
@@ -206,38 +206,41 @@
 	              	<div id="footer_logo"></div>
 	                <h3 class="widget-title">Enitour.com</h3>
 	                <div class="footer_site_description">
-	                <p>У нас вы сможете купить туры в любую точку России по самым низким ценам и получить скидки на семейные поездки!</p>
+	                <p>在我们网站，您可以预订俄罗斯任何地方的旅游线路，保证最低价格，家庭旅游享受更高折扣！</p>
 	                </div>
 	              		
 	              </div>
 	            </div>
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget footer-widget">
 	              <div id="tweet" class="widget widget_tweet">
-	                <h3 class="widget-title">Служебные страницы</h3>
+	                <h3 class="widget-title">补充信息</h3>
 	                	<% Page.all.where(footer: true).each do |footer_pages| %>
+	                		<% if footer_pages.published? %>
 	              			<li><%= link_to footer_pages.rus_title, footer_pages %></li>
+	              			<% else %>
+	              			<% end %>
 	              		<% end %>
 	              </div>
 	            </div>
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget footer-widget">
 	            <div class="footer_news_wrap">
 	              <div id="get_touch" class="widget widget_get_touch">
-						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Данные для связи по Skype"><i class="fa fa-skype"></i><p>help-enitour</p> </div>
-						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Адрес электронной почты"><i class="fa fa-envelope-o"></i><p>help@enitour.com</p></div>
-						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Номер для связи по QQ"><i class="fa fa-qq"></i><p>2717351489</p> </div>
-						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Номер телефона оператора"><i class="fa fa-phone"></i><p>15807565719</p> </div>
-						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="ID оператора в системе WeChat"><i class="fa fa-weixin"></i><p>help-enitour</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="Skype 联系资料"><i class="fa fa-skype"></i><p>help-enitour</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="邮箱地址"><i class="fa fa-envelope-o"></i><p><script type="text/javascript">eval(unescape('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%22%6d%61%69%6c%74%6f%3a%68%65%6c%70%40%65%6e%69%74%6f%75%72%2e%63%6f%6d%22%3e%68%65%6c%70%40%65%6e%69%74%6f%75%72%2e%63%6f%6d%3c%2f%61%3e%27%29%3b'))</script></p></div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="QQ 号码"><i class="fa fa-qq"></i><p>2717351489</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="业务员电话号码"><i class="fa fa-phone"></i><p>15807565719</p> </div>
+						<div id="footer_contact_icon" data-toggle="tooltip" data-placement="top" title="业务员微信号码"><i class="fa fa-weixin"></i><p>help-enitour</p> </div>
 	              </div>
 	            </div>
 	            </div>
 	            <div class="col-lg-3 col-sm-3 col-md-3 widget-1 footer-widget last footer-widget">
 	              <div id="newsletter-wrap" class="widget widget_get_touch footer_news_wrap">
 	                <div class="footer_site_description">
-	                Вы можете подписаться на рассылку свежих новостей и получать информацию о всех акциях и новых турах! 
+	                您可以订阅群发最新消息，接收所有活动和旅游信息。
 
 	                <form novalidate="" class="" name="cc-embedded-subscribe-form" method="post" action="index.html" id="subscribe_form">
 	                <input type="text" required placeholder="邮箱" id="mce-EMAIL" class="subs_input" name="EMAIL" value="">
-	                <input type="submit" class="subs_submit" value="Подписаться" name="subscribe">
+	                <input type="submit" class="subs_submit" value="订阅" name="subscribe">
 	                </form>
 
 	                </div>
