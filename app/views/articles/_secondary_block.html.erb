@@ -21,11 +21,11 @@ color: #555;
       <% Blog.all.each do |menu_item| %>
         <% if menu_item.published? or can? :update, @blog %>
           <% if menu_item.published == true %>
-            <%= link_to menu_item, class: 'list-group-item' do %>
+            <%= link_to menu_item, method: :get, class: 'list-group-item' do %>
               <i class="fa fa-<%= menu_item.menu_icon %> fa-fw"></i>&nbsp;&nbsp;&nbsp;<%= menu_item.title %>
             <% end %>
           <% else %>
-            <%= link_to menu_item, class: 'list-group-item', style: 'color: #9B1B00;' do %>
+            <%= link_to menu_item, method: :get, class: 'list-group-item', style: 'color: #9B1B00;' do %>
               <i class="fa fa-<%= menu_item.menu_icon %> fa-fw" , style="color: #9B1B00;"></i>&nbsp;&nbsp;&nbsp;<%= menu_item.title %>
             <% end %>
           <% end %>

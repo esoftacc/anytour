@@ -17,8 +17,8 @@
       <div class="panel-body admin_tools_top">
         <i class="fa fa-cogs menu_item_icon"></i>
         <% if @page.index != true %>
-        <%= link_to '', pages_path, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
-        <%= link_to_unless_current( '', { action: "new" }, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
+        <%= link_to '', pages_path, method: :get, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
+        <%= link_to_unless_current( '', { action: "new" }, method: :get, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
         <% end %>
         <%= f.submit 'сохранить', :class => "btn btn-success fa fa-plus fa-2 right", style: 'color: black; font-size: 12px; text-transform: uppercase; padding: 10px; margin-left: 15px;' %>
       </div>

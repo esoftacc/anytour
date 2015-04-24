@@ -21,7 +21,7 @@ metamagic title: @tour.meta_tag.title, description: @tour.meta_tag.description ,
     <div class="tour_image"> 
       <% if can? :update, @tour %>
         <div id="page_admin_tools_block" class="tour_page_tools">
-          <%= link_to edit_tour_path(@tour), :class => 'page_admin_tool_button' do %>
+          <%= link_to edit_tour_path(@tour), method: :get, :class => 'page_admin_tool_button' do %>
             <i class="fa fa-pencil"></i>
           <% end %>
         </div>

@@ -22,7 +22,7 @@ metamagic title: @article.meta_tag.title, description: @article.meta_tag.descrip
             <div class="featured-image">
             <% if can? :update, @article %>
               <div id="page_admin_tools_block" class="article_tools">
-                <%= link_to edit_article_path(@article), :class => 'page_admin_tool_button' do %>
+                <%= link_to edit_article_path(@article), method: :get, :class => 'page_admin_tool_button' do %>
                   <i class="fa fa-pencil"></i>
                 <% end %>
               </div>

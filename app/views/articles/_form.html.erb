@@ -20,8 +20,8 @@
     <div class="panel panel-default" style="margin: 0px 5% 0px 5%">
       <div class="panel-body admin_tools_top">
         <i class="fa fa-cogs menu_item_icon"></i>
-        <%= link_to '', articles_path, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
-        <%= link_to_unless_current( '', { action: "new" }, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
+        <%= link_to '', articles_path, method: :get, class: 'btn btn-success fa fa-list fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;' %>
+        <%= link_to_unless_current( '', { action: "new" }, method: :get, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px; margin-left: 15px;') %>
         <%= f.submit 'сохранить', :class => "btn btn-success fa fa-plus fa-2 right", style: 'color: black; font-size: 12px; text-transform: uppercase; padding: 10px; margin-left: 15px;' %>
       </div>
     </div>

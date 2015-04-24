@@ -28,8 +28,8 @@
 		    </div>
 		    <div id="collapseTour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTour">
 		      <div class="admin_panel_submenu">
-		        <%= link_to 'Категории', categories_path, class: 'admin_submenu_item' %>
-		        <%= link_to 'Управление турами', tours_path, class: 'admin_submenu_item' %>
+		        <%= link_to 'Категории', categories_path, class: 'admin_submenu_item', method: :get %>
+		        <%= link_to 'Управление турами', tours_path, class: 'admin_submenu_item', method: :get %>
 		      </div>
 		    </div>
 		  </div>
@@ -43,8 +43,8 @@
 		    </div>
 		    <div id="collapseBlog" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBlog">
 		      <div class="admin_panel_submenu">
-		        <%= link_to 'Категории', blogs_path, class: 'admin_submenu_item' %>
-		        <%= link_to 'Управление статьями', articles_path, class: 'admin_submenu_item'%>
+		        <%= link_to 'Категории', blogs_path, class: 'admin_submenu_item', method: :get %>
+		        <%= link_to 'Управление статьями', articles_path, class: 'admin_submenu_item', method: :get%>
 		      </div>
 		  	</div>
 		  </div>
@@ -62,7 +62,7 @@
 		    </div>
 		    <div id="collapseQuestions" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingQuestions">
 		      <div class="admin_panel_submenu">
-		        <%= link_to tour_questions_path, class: 'admin_submenu_item' do %>
+		        <%= link_to tour_questions_path, method: :get, class: 'admin_submenu_item' do %>
 		          <% if Question.tour_questions_count != 0 %>
 		            Вопросы по турам <span class="submenu_item_bage"><%= Question.tour_questions_count %></span>
 		          <% else %>
@@ -70,7 +70,7 @@
 		          <% end %>
 		        <% end %>
 
-		        <%= link_to questions_path, class: 'admin_submenu_item' do %>
+		        <%= link_to questions_path, method: :get, class: 'admin_submenu_item' do %>
 		          <% if Question.questions_count != 0  %>
 		            Основные вопросы <span class="submenu_item_bage"><%= Question.questions_count %></span>
 		          <% else %>
@@ -90,8 +90,8 @@
 		    </div>
 		    <div id="collapsePages" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPages">
 		      <div class="admin_panel_submenu">
-		        <%= link_to 'Изменение главной', edit_page_path(1), class: 'admin_submenu_item' %>
-		        <%= link_to 'Информ страницы', pages_path, class: 'admin_submenu_item' %>
+		        <%= link_to 'Изменение главной', edit_page_path(1), class: 'admin_submenu_item', method: :get %>
+		        <%= link_to 'Информ страницы', pages_path, class: 'admin_submenu_item', method: :get %>
 		      </div>
 		    </div>
 		  </div>
@@ -117,7 +117,7 @@
     <span>Здравствуйте, <%= current_user.email %></span>
     <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
 <% else %>
-亲， <%= link_to '请登录', new_user_session_path %>  <%= link_to '免费注册', new_user_registration_path %>
+亲， <%= link_to '请登录', new_user_session_path, method: :get %>  <%= link_to '免费注册', new_user_registration_path, method: :get %>
 <% end %>
 
 	            </div>
@@ -133,7 +133,7 @@
 
 				    <div class="navbar-header">
 				    	<div id="logo_wrap">
-					    	<%= link_to root_url, class: 'logo', title: '旅行' do %>
+					    	<%= link_to root_url, method: :get, class: 'logo', title: '旅行' do %>
 					        <span>EniTour</span>
 					        <% end %>
 						</div>
@@ -141,7 +141,7 @@
 
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav">
-				      	  <li class=><%= link_to '主页', root_url %></li>
+				      	  <li class=><%= link_to '主页', root_url, method: :get %></li>
 				      	  <li class="dropdown">
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">旅行 <span class="caret"></span></a>
 				          
@@ -150,7 +150,7 @@
 		                    <% if category.parent_id.nil? %>
 		                      <% if category.published? or can? :update, @category %>
 				          		<% if category.published == true %>
-				          	  	  <li><%= link_to category.name, category %></li>
+				          	  	  <li><%= link_to category.name, category, method: :get %></li>
 				          	  	<% else %>
 				                  <li><%= link_to category.name, category, method: :get, style: 'color: #9B1B00;' %></li>
 				                <% end %>
@@ -165,14 +165,14 @@
 				          	<% Blog.all.each do |blog_category| %>
 				          	  <% if blog_category.published? or can? :update, @blog %>
 				          	  	<% if blog_category.published == true %>
-				          	  	  <li><%= link_to blog_category.title, blog_category %></li>
+				          	  	  <li><%= link_to blog_category.title, blog_category, method: :get %></li>
 				          	  	<% else %>
-				                  <li><%= link_to blog_category.title, blog_category, style: 'color: #9B1B00;' %></li>
+				                  <li><%= link_to blog_category.title, blog_category, method: :get, style: 'color: #9B1B00;' %></li>
 				                <% end %>
 				              <% end %>
 				            <% end %>
 				          </ul>
-				        <li><%= link_to '联系我们', new_question_url %></li>
+				        <li><%= link_to '联系我们', new_question_url, method: :get %></li>
 				      </ul>
 				      <form class="navbar-form navbar-right" role="search">
 				        <div class="form-group">
@@ -216,7 +216,7 @@
 	                <h3 class="widget-title">补充信息</h3>
 	                	<% Page.all.where(footer: true).each do |footer_pages| %>
 	                		<% if footer_pages.published? %>
-	              			<li><%= link_to footer_pages.title, footer_pages %></li>
+	              			<li><%= link_to footer_pages.title, footer_pages, method: :get %></li>
 	              			<% else %>
 	              			<% end %>
 	              		<% end %>

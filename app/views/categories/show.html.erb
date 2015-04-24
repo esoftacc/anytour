@@ -34,7 +34,7 @@ metamagic title: @category.meta_tag.title, description: @category.meta_tag.descr
 
             <% if can? :update, @tour %>
               <div id="page_admin_tools_block" class="category_tour_tools">
-                <%= link_to edit_tour_path(tour), :class => 'page_admin_tool_button' do %>
+                <%= link_to edit_tour_path(tour), method: :get, :class => 'page_admin_tool_button' do %>
                   <i class="fa fa-pencil"></i>
                 <% end %>
               </div>
@@ -42,18 +42,18 @@ metamagic title: @category.meta_tag.title, description: @category.meta_tag.descr
 
             <div class="row">
               <div id="category_image" class="left-effect">
-                  <%= link_to (image_tag tour.image.url(:category), title: tour.image_title, alt: tour.image_title), tour %>
+                  <%= link_to (image_tag tour.image.url(:category), method: :get, title: tour.image_title, alt: tour.image_title), tour %>
             </div>
               <div id="tour_content" class="col-lg-5 col-md-12 col-sm-12 right-effect">
                 <article class="post type-post" id="post-85">
                   <header class="entry-header">
                     <h3 class="entry-title">
                       <% if tour.published? %>
-                        <%= link_to(tour) do %>
+                        <%= link_to tour , method: :get do %>
                           <%= tour.title %>
                         <% end %>
                       <% else %>
-                        <%= link_to tour, :style => "color: #9B1B00;", method: :get do %>
+                        <%= link_to tour, method: :get, :style => "color: #9B1B00;", method: :get do %>
                           <%= tour.title %>
                         <% end %>
                       <% end %>
@@ -78,7 +78,7 @@ metamagic title: @category.meta_tag.title, description: @category.meta_tag.descr
                 </div>
               </div>
               <i class="fa fa-jpy"></i><span class="category_tour_price"><%= tour.price%></span>
-            <%= link_to 'Подробнее', tour, class: "btn btn-primary btn-lg" %>
+            <%= link_to '详情', tour, method: :get, class: "btn btn-primary btn-lg" %>
             </div>
         </section>
 

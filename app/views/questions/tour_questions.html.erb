@@ -24,7 +24,7 @@ metamagic title: 'Вопросы по турам'
     <tbody>
       <% @questions.each do |question| %>
         <tr>
-          <td><%= link_to question.title, question_path(question) %></td>
+          <td><%= link_to question.title, question_path(question), method: :get %></td>
           <td><%= question.email %></td>
           <td><%= question.name %></td>
           <td>

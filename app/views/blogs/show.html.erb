@@ -24,12 +24,12 @@ metamagic title: @blog.meta_tag.title, description: @blog.meta_tag.description ,
 		              <div class="featured-image">
 		              	<% if can? :update, @article %>
 						  <div id="page_admin_tools_block" class="category_article_tools">
-						    <%= link_to edit_article_path(article), :class => 'page_admin_tool_button' do %>
+						    <%= link_to edit_article_path(article), method: :get, :class => 'page_admin_tool_button' do %>
 						      <i class="fa fa-pencil"></i>
 						    <% end %>
 						  </div>
 						<% end %>
-		                <%= link_to (image_tag article.image.url(:big), title: article.image_title, alt: article.image_title), article %>
+		                <%= link_to (image_tag article.image.url(:big), method: :get, title: article.image_title, alt: article.image_title), article %>
 		              </div><!--/.featured-image-->
 		              <div class="coca-content-blog-content">
 		                <div class="left-entry-header blog-sing-content">
@@ -42,7 +42,7 @@ metamagic title: @blog.meta_tag.title, description: @blog.meta_tag.description ,
 		                        <% if article.published? %>
 	                              <%= article.title %>
 	                            <% else %>
-	                              <%= link_to article, :style => "color: #9B1B00;" do %>
+	                              <%= link_to article, method: :get, :style => "color: #9B1B00;" do %>
 	                                <%= article.title %>
 	                              <% end %>
 	                            <% end %>
@@ -58,7 +58,7 @@ metamagic title: @blog.meta_tag.title, description: @blog.meta_tag.description ,
 		                  </div>
 		                  <div class="entry-excerpt">
 		                    <%= article.short_description %>
-		                    <%= link_to 'Read More →', article, class: 'readmore' %>
+		                    <%= link_to '详情 →', article, method: :get, class: 'readmore' %>
 		                  </div>
 		                </div>
 		              </div>

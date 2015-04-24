@@ -16,7 +16,7 @@ metamagic title: 'Управление турами'
   <div class="panel panel-default">
     <div class="panel-body admin_tools_top">
       <i class="fa fa-cogs menu_item_icon"></i>
-      <%= link_to '', new_tour_path, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px;' %>
+      <%= link_to '', new_tour_path, method: :get, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px;' %>
     </div>
   </div>
   <table class="bordered">
@@ -33,7 +33,7 @@ metamagic title: 'Управление турами'
     <tbody>
       <% @tours.each do |tour| %>
         <tr>
-          <td><%=link_to tour.rus_title, tour %></td>
+          <td><%=link_to tour.rus_title, method: :get, tour %></td>
           <td><%= tour.price %></td>
           <td>
           <% if Category.find_by id: tour.category_id %>
@@ -49,7 +49,7 @@ metamagic title: 'Управление турами'
               <i class="fa fa-times" style="color: #9B1B00; font-size: 19px;"></i>
             <% end%>
           </td>
-          <td class="center"><%= link_to '', edit_tour_path(tour), class: 'btn btn-primary fa fa-pencil fa-2 center admin_pages_buttons' %></td>
+          <td class="center"><%= link_to '', edit_tour_path(tour), method: :get, class: 'btn btn-primary fa fa-pencil fa-2 center admin_pages_buttons' %></td>
           <td class="center"><%= link_to '', tour, method: :delete, data: { confirm: 'Точно удалить?' }, class: 'btn btn-danger fa fa-trash-o admin_pages_buttons' %></td>
         </tr>
       <% end %>

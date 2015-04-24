@@ -17,7 +17,7 @@ metamagic title: 'Управление категориями статей'
   <div class="panel panel-default">
     <div class="panel-body admin_tools_top">
       <i class="fa fa-cogs menu_item_icon"></i>
-      <%= link_to '', new_blog_path, class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px;' %>
+      <%= link_to '', new_blog_path, method: :get , class: 'btn btn-success fa fa-plus fa-2 right', style: 'color: black; font-size: 20px;' %>
     </div>
   </div>
 <table class="bordered">
@@ -32,7 +32,7 @@ metamagic title: 'Управление категориями статей'
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= link_to blog.rus_title, blog %></td>
+        <td><%= link_to blog.rus_title, blog, method: :get %></td>
         <td width="100" class="center">
           <% if blog.published? %>
             <i class="fa fa-check" style="color: #009B18; font-size: 19px;"></i>
@@ -40,7 +40,7 @@ metamagic title: 'Управление категориями статей'
             <i class="fa fa-times" style="color: #9B1B00; font-size: 19px;"></i>
           <% end%>
         </td>
-        <td width="100" class="center"><%= link_to '', edit_blog_path(blog), class: 'btn btn-primary fa fa-pencil fa-2 admin_pages_buttons' %></td>
+        <td width="100" class="center"><%= link_to '', edit_blog_path(blog), method: :get, class: 'btn btn-primary fa fa-pencil fa-2 admin_pages_buttons' %></td>
         <td width="100" class="center"><%= link_to '', blog, method: :delete, data: { confirm: 'Точно удалить?' }, class: 'btn btn-danger fa fa-trash-o admin_pages_buttons' %></td>
       </tr>
     <% end %>
