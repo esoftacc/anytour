@@ -216,7 +216,7 @@
 	                <h3 class="widget-title">补充信息</h3>
 	                	<% Page.all.where(footer: true).each do |footer_pages| %>
 	                		<% if footer_pages.published? %>
-	              			<li><%= link_to footer_pages.rus_title, footer_pages %></li>
+	              			<li><%= link_to footer_pages.title, footer_pages %></li>
 	              			<% else %>
 	              			<% end %>
 	              		<% end %>
